@@ -15,6 +15,11 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTABLE_CLASSES = {
+    "test_child_observatory.ChildObservatoryTests",
+    "test_child_intelligence.ChildOddsTests",
+    "test_child_intelligence.ChildUncertaintyTests",
+    "test_child_intelligence.ChildContinuumRegistryTests",
+    "test_child_intelligence.ChildLedgerTests",
     "test_child_science.ChildFeatureTests",
     "test_child_science.ChildSimulationTests",
     "test_child_science.ChildModelTests",
@@ -47,6 +52,7 @@ PORTABLE_CLASSES = {
     "test_science_demo.HistoricalDemoTests",
 }
 LOCAL_CLASSES = {
+    "test_child_runtime.ChildRuntimeLiveTests": "TIER_2: CHILD live replay, export and dashboard",
     "test_child_storage.ChildStorageLiveTests": "TIER_2: isolated CHILD databases and bounded identities",
     "test_compute.ComputeBaselineTests": "TIER_3: canonical Conda and CUDA/cuDNN",
     "test_dual_database.LiveDualDatabaseTests": "TIER_3: Windows services, databases and XAMPP",
