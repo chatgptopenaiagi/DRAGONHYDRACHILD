@@ -16,11 +16,11 @@ class PortablePublishedSchemaTests(unittest.TestCase):
         # The published Desktop contract belongs to the owner's Windows lab.
         # Runtime validation must still bind every envelope to its actual root.
         self.assertEqual(published["properties"]["project_root"], {
-            "const": r"C:\xampp\DRAGONHYDRA", "type": "string",
+            "const": r"C:\xampp\DRAGONHYDRACHILD", "type": "string",
         })
         self.assertEqual(SCHEMA["properties"]["project_root"], {
             "const": str(PROJECT_ROOT), "type": "string",
         })
         relocated = copy.deepcopy(SCHEMA)
-        relocated["properties"]["project_root"]["const"] = r"C:\xampp\DRAGONHYDRA"
+        relocated["properties"]["project_root"]["const"] = r"C:\xampp\DRAGONHYDRACHILD"
         self.assertEqual(relocated, published)

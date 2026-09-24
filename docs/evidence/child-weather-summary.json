@@ -1,0 +1,73 @@
+{
+  "attribution": {
+    "changes": "London coordinate proxy; selected future hours and normalized temperature/precipitation units. No endorsement implied.",
+    "credit": "Forecast data from MET Norway",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "url": "https://api.met.no/weatherapi/locationforecast/2.0/documentation"
+  },
+  "cache_expires": "2026-09-24T21:21:37+00:00",
+  "content_hash": "37ce9dfc0a09891c55a5cac5db0e32de4dba9389513d8db3d6c7027f388b7ee7",
+  "epistemic_state": "HYPOTHESIS",
+  "forecast_hour_count": 65,
+  "http_status": 200,
+  "last_modified": "Thu, 24 Sep 2026 20:51:24 GMT",
+  "lawful_capture_status": "COMPLETE",
+  "limitations": [
+    "One proxy location; no verified stadium relation.",
+    "No predictive weather impact demonstrated.",
+    "Future weather values are provider forecasts, not observed weather.",
+    "Sustained daily operation not yet evidenced.",
+    "No second independent fixture source or market source implied."
+  ],
+  "location_proxy": {
+    "is_stadium_location": false,
+    "latitude": 51.5,
+    "longitude": -0.12,
+    "name": "London coordinate proxy"
+  },
+  "open_meteo": {
+    "forecast_endpoint_requested": false,
+    "reason": "ROBOTS_BLOCKED",
+    "robots_hash": "efdb5938a9736727f5cce2b60355588e4fa541d19d022d222d8a09b8efd5dcce",
+    "status": "BLOCKED"
+  },
+  "parser_version": "met-locationforecast/1.0",
+  "raw_rows_committed": false,
+  "retrieved_at": "2026-09-24T20:51:26.041046+00:00",
+  "robots_status": "ALLOWED",
+  "source_id": "met-norway",
+  "source_policy": {
+    "allowed_url": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=51.5&lon=-0.12",
+    "attribution": {
+      "changes": "London coordinate proxy; selected future hours and normalized temperature/precipitation units. No endorsement implied.",
+      "credit": "Forecast data from MET Norway",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://api.met.no/weatherapi/locationforecast/2.0/documentation"
+    },
+    "identifying_user_agent": "DRAGONHYDRACHILD/0.1 https://github.com/chatgptopenaiagi/DRAGONHYDRACHILD (owner https://github.com/chatgptopenaiagi)",
+    "interval_hours": 24,
+    "license_hash": "c93748340237b7850bafd371365eb194893975dca0d191401b4b83594a546b72",
+    "license_status": "CC-BY-4.0",
+    "license_url": "https://api.met.no/doc/License",
+    "max_requests_per_attempt": 4,
+    "retry_count": 0,
+    "reviewed_at": "2026-09-24T20:48:09.491610+00:00",
+    "scope": "one London proxy; provider forecasts only; not stadium observations",
+    "source_policy_version": "child-met-london/1.0",
+    "terms_hash": "880263e39cd55329b1c021cf905827f1954fb6968f6a6b611ad1756ab88e37c2",
+    "terms_status": "ALLOWED_RESEARCH",
+    "terms_url": "https://api.met.no/doc/TermsOfService"
+  },
+  "source_policy_version": "child-met-london/1.0",
+  "source_url": "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=51.5&lon=-0.12",
+  "sql_snapshot_record_id": "1d921a1fe8544f928e1cece15dd54576",
+  "status": "PARTIAL",
+  "temporal_mode": "STRICT_PIT",
+  "tests": {
+    "failed": 0,
+    "passed": 15,
+    "weather_portable": 15
+  }
+}

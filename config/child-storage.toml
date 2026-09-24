@@ -1,0 +1,19 @@
+[sqlserver]
+host = "127.0.0.1"
+port = 1433
+database = "DRAGONHYDRACHILD_LAB"
+schema = "child"
+odbc_driver = "ODBC Driver 18 for SQL Server"
+encrypt = true
+trust_server_certificate = true
+
+[mariadb]
+host = "127.0.0.1"
+port = 3306
+database = "dragonhydrachild_ops"
+
+[ownership]
+structured_intelligence = "sqlserver"
+operational_state = "mariadb"
+presentation_cache = "mariadb"
+analytical_export = "derived immutable JSONL; SQL Server remains owner"

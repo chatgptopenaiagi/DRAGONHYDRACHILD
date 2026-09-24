@@ -186,7 +186,7 @@
       "type": "string"
     },
     "project_root": {
-      "const": "C:\\xampp\\DRAGONHYDRA",
+      "const": "C:\\xampp\\DRAGONHYDRACHILD",
       "type": "string"
     },
     "reason": {

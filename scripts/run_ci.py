@@ -15,6 +15,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTABLE_CLASSES = {
+    "test_child_acquisition.ChildAcquisitionTests",
+    "test_child_storage.ChildStorageTests",
+    "test_child_weather.ChildWeatherTests",
+    "test_child_weather.ChildMetWeatherTests",
     "test_ci_contracts.PortablePublishedSchemaTests",
     "test_configuration.ConfigurationTests",
     "test_database_contracts.DatabaseContractTests",
@@ -39,6 +43,7 @@ PORTABLE_CLASSES = {
     "test_science_demo.HistoricalDemoTests",
 }
 LOCAL_CLASSES = {
+    "test_child_storage.ChildStorageLiveTests": "TIER_2: isolated CHILD databases and bounded identities",
     "test_compute.ComputeBaselineTests": "TIER_3: canonical Conda and CUDA/cuDNN",
     "test_dual_database.LiveDualDatabaseTests": "TIER_3: Windows services, databases and XAMPP",
     "test_mariadb_probe.LiveMariaDBTests": "TIER_2: configured MariaDB and least-privilege identity",
