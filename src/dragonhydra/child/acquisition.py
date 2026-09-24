@@ -8,7 +8,8 @@ import time
 from uuid import UUID, uuid4
 
 from ..config import PROJECT_ROOT
-from ..science.entities import competition_id, fixture_id, team_id
+from ..science.entities import competition_id, fixture_id, EntityType
+from .identity import load_team_registry, PROVIDER
 from ..science.prospective import RawEvidenceStore, ProspectiveSnapshot, validate_fixture_document
 from ..web.contracts import FetchPolicy, PipelineError, public_url, timestamp, utcnow
 from ..web.fetch import fetch
@@ -28,19 +29,27 @@ class SourceAdapter:
 
 
 OPENFOOTBALL = SourceAdapter('openfootball', ('fixture', 'team', 'result'),
-    ('raw.githubusercontent.com',), 'child-openfootball/1.0',
+    ('raw.githubusercontent.com',), 'child-openfootball/1.1',
     'GENUINE_CAPTURE; PROVIDER_PUBLICATION_AND_KICKOFF_TIMEZONE_UNKNOWN')
 
 
-def normalize(body: bytes, snapshot: dict) -> list[dict]:
+def normalize(body: bytes, snapshot: dict, *, root=PROJECT_ROOT) -> list[dict]:
     """Source identity is declared/scoped; UTC kickoff is deliberately not inferred."""
     document = json.loads(body)
     validate_fixture_document(body, 'English Premier League 2026/27')
     competition = competition_id('openfootball', 'en.1')
+    cursor=datetime.now(timezone.utc)
+    registry=load_team_registry(root)
+    resolved={}
+    for name in {item[key] for item in document['matches'] for key in ('team1','team2')}:
+        resolution=registry.resolve_name(PROVIDER,EntityType.TEAM,name,valid_at=cursor,known_at=cursor)
+        if not resolution.resolved:
+            raise PipelineError('ENTITY_UNRESOLVED')
+        resolved[name]=resolution
     rows = []
     for item in document['matches']:
-        home = team_id('openfootball:en.1', item['team1'])
-        away = team_id('openfootball:en.1', item['team2'])
+        home = resolved[item['team1']].canonical_id
+        away = resolved[item['team2']].canonical_id
         key = json.dumps([item['round'], str(home), str(away)], ensure_ascii=False, separators=(',', ':'))
         score = item.get('score')
         score_state = 'NOT_REPORTED' if score is None else 'UNKNOWN_FORMAT'
@@ -62,13 +71,15 @@ def normalize(body: bytes, snapshot: dict) -> list[dict]:
             'home_team': item['team1'], 'away_team': item['team2'], 'match_date': item['date'],
             'kickoff_local': item.get('time'), 'kickoff_utc': None,
             'timestamp_quality': 'SOURCE_LOCAL_TIMEZONE_UNVERIFIED',
-            'identity_method': 'DECLARED_SOURCE_NAME_AND_ROUND_TEAM_KEY',
+            'identity_method': 'REVIEWED_DECLARED_ALIAS_AND_ROUND_CANONICAL_TEAM_KEY',
+            'identity_resolved_at':cursor.isoformat(),
+            'identity_mapping_recorded_at':max(row.recorded_at for key in ('team1','team2') for row in resolved[item[key]].mappings).isoformat(),
             'home_score': goals[0] if goals else None, 'away_score': goals[1] if goals else None,
             'source_score': score, 'score_state': score_state,
             'status': 'REPORTED_FINAL' if goals else 'SCHEDULED',
             'snapshot_id': snapshot['snapshot_id'], 'source_id': snapshot['source_id'],
             'source_url': snapshot['source_url'], 'observed_at': snapshot['observed_at'],
-            'retrieved_at': snapshot['retrieved_at'], 'available_at': snapshot['available_at'],
+            'retrieved_at': snapshot['retrieved_at'], 'available_at': max(cursor,timestamp(snapshot['available_at'])).isoformat(),
             'content_hash': snapshot['content_hash'], 'parser_version': OPENFOOTBALL.parser_version,
             'source_policy_version': snapshot['source_policy_version'], 'temporal_mode': 'STRICT_PIT',
             'epistemic_state': 'OBSERVATION', 'confidence': 0.8, 'synthetic': False})
@@ -167,7 +178,7 @@ def collect_once(*, root: Path = PROJECT_ROOT, persist: bool = True) -> dict:
                 exclusive_json(policy_artifact, source)
             if digest(encode(json.loads(policy_artifact.read_text(encoding='utf-8')))) != snapshot['source_policy_hash']:
                 raise PipelineError('SOURCE_POLICY_HASH_MISMATCH')
-            fixtures = normalize(body, snapshot)
+            fixtures = normalize(body, snapshot, root=root)
             validation = validate_records(fixtures, at=datetime.now(timezone.utc))
             receipt['medusa'] = validation
             if validation['accepted'] != len(fixtures):

@@ -44,6 +44,22 @@ class FakeLedger:
 
 
 class ChildObservatoryTests(unittest.TestCase):
+    def test_code_archive_retains_old_bytes_across_source_edits(self):
+        import tempfile
+        from pathlib import Path
+        from dragonhydra.child.observatory import archive_calculation_code
+        from dragonhydra.science.prospective import RawEvidenceStore
+        import json
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'src').mkdir();(root/'config').mkdir()
+            code=root/'src/model.py';code.write_bytes(b'VERSION = 1\n')
+            original=archive_calculation_code(root)
+            self.assertEqual(original,archive_calculation_code(root))
+            code.write_bytes(b'VERSION = 2\n')
+            self.assertNotEqual(original,archive_calculation_code(root))
+            store=RawEvidenceStore(root/'runtime/child/code')
+            manifest=json.loads(store.get(original))
+            self.assertEqual(store.get(manifest['files']['src/model.py']),b'VERSION = 1\n')
     def test_strict_current_inputs_preserve_actual_capture_clocks(self):
         source = capture()
         before = deepcopy(source)

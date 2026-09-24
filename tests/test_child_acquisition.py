@@ -28,7 +28,7 @@ class ChildAcquisitionTests(unittest.TestCase):
         new=normalize(json.dumps(self.document).encode(),self.snapshot)[0]
         self.assertEqual(old['fixture_id'],new['fixture_id'])
         self.assertIsNone(new['kickoff_utc'])
-        self.assertEqual(validate_records([old],at=self.now)['accepted'],1)
+        self.assertEqual(validate_records([old],at=datetime.now(timezone.utc))['accepted'],1)
 
     def test_ambiguous_source_score_is_preserved_never_final(self):
         self.document['matches'][0]['score']=[0,0]
@@ -41,17 +41,20 @@ class ChildAcquisitionTests(unittest.TestCase):
         row=normalize(json.dumps(self.document).encode(),self.snapshot)[0]
         self.assertEqual(row['score_state'],'UNKNOWN_FORMAT')
         self.assertEqual(row['status'],'SCHEDULED')
+        self.document['matches'][0]['team1']='Unreviewed New Club'
+        with self.assertRaisesRegex(PipelineError,'ENTITY_UNRESOLVED'):
+            normalize(json.dumps(self.document).encode(),self.snapshot)
 
     def test_fault_injection_and_provenance_controls(self):
         report=fault_injection_report()
         self.assertEqual((report['detected'],report['faults'],report['false_positives']),(7,7,0))
         row=normalize(self.body,self.snapshot)[0]
         for mutation in ({'source_url':'http://127.0.0.1/private'}, {'content_hash':'bad'}, {'epistemic_state':'PREDICTION'}):
-            self.assertEqual(validate_records([{**row,**mutation}],at=self.now)['accepted'],0)
+            self.assertEqual(validate_records([{**row,**mutation}],at=datetime.now(timezone.utc))['accepted'],0)
 
     def test_duplicate_and_conflict_remain_distinct(self):
         row=normalize(self.body,self.snapshot)[0]
-        result=validate_records([row,row,{**row,'home_score':3}],at=self.now)
+        result=validate_records([row,row,{**row,'home_score':3}],at=datetime.now(timezone.utc))
         self.assertIn('DUPLICATE',result['decisions'][1]['reason_codes'])
         self.assertIn('CONFLICTING_DATA',result['decisions'][2]['reason_codes'])
 
@@ -59,6 +62,7 @@ class ChildAcquisitionTests(unittest.TestCase):
         (PROJECT_ROOT/'runtime/tmp').mkdir(parents=True,exist_ok=True)
         with tempfile.TemporaryDirectory(dir=PROJECT_ROOT/'runtime/tmp') as folder:
             root=Path(folder);(root/'config').mkdir()
+            (root/'config/child-entity-crosswalk.json').write_bytes((PROJECT_ROOT/'config/child-entity-crosswalk.json').read_bytes())
             source=json.loads((PROJECT_ROOT/'config/web_sources.json').read_text())
             (root/'config/web_sources.json').write_text(json.dumps(source))
             evidence={'retrieved_at':self.stamp,'content_hash':digest(self.body),'content_type':'application/json','source_id':'openfootball',
@@ -76,6 +80,7 @@ class ChildAcquisitionTests(unittest.TestCase):
         (PROJECT_ROOT/'runtime/tmp').mkdir(parents=True,exist_ok=True)
         with tempfile.TemporaryDirectory(dir=PROJECT_ROOT/'runtime/tmp') as folder:
             root=Path(folder);(root/'config').mkdir()
+            (root/'config/child-entity-crosswalk.json').write_bytes((PROJECT_ROOT/'config/child-entity-crosswalk.json').read_bytes())
             source=json.loads((PROJECT_ROOT/'config/web_sources.json').read_text());source['openfootball']['terms_status']='PROHIBITED'
             (root/'config/web_sources.json').write_text(json.dumps(source))
             with patch('dragonhydra.child.acquisition.fetch') as fetcher:

@@ -16,6 +16,7 @@ from ..science.temporal import Availability, TemporalMode
 from ..web.provenance import encode, exclusive_json
 from .acquisition import source_metrics, fault_injection_report
 from .features import MatchEvidence
+from .identity import registry_records, load_document
 from .ledger import LedgerProposal, PredictionLedger
 from .registry import Maturity, OperationalStatus, default_heads, update_head
 from .research_run import predict_current
@@ -30,6 +31,27 @@ def _now():
 
 def _hash(value):
     return hashlib.sha256(encode(value)).hexdigest()
+
+
+def archive_calculation_code(root=PROJECT_ROOT):
+    """Retain exact authored code/config bytes, not merely an unrecoverable hash.
+
+    The manifest is content-addressed and contains no clocks so identical code
+    has an identical fingerprint. Runtime and credentials are never searched.
+    """
+    store=RawEvidenceStore(root/'runtime/child/code')
+    paths=sorted((root/'src').rglob('*.py'))
+    paths+=sorted(path for path in (root/'config').glob('*') if path.suffix in ('.json','.toml'))
+    if (root/'pyproject.toml').exists():
+        paths.append(root/'pyproject.toml')
+    manifest={'kind':'AUTHORED_CALCULATION_SOURCE_BUNDLE','version':'1.0','files':{}}
+    for path in paths:
+        if path.is_symlink() or path.is_junction():
+            raise ValueError('Source bundle refuses linked files')
+        manifest['files'][path.relative_to(root).as_posix()]=store.put(path.read_bytes())
+    if not manifest['files']:
+        raise ValueError('Source bundle cannot be empty')
+    return store.put(encode(manifest))
 
 
 def latest_fixture_capture(root=PROJECT_ROOT):
@@ -143,6 +165,11 @@ def run_observatory(*, issue_prediction=True) -> dict:
     ledger=PredictionLedger(PROJECT_ROOT/'runtime/child/predictions')
     outcomes=append_available_outcomes(capture,ledger,availability)
     store=ChildStore()
+    entity_document=load_document()
+    with sql_connection('ingest') as conn:
+        for entity in registry_records():
+            store.append(conn,'entities',entity['canonical_id'],entity,'openfootball',_now().isoformat())
+        conn.commit()
     # Outcome scoring continues even when a season has no future fixture.
     if outcomes:
         with sql_connection('ingest') as conn:
@@ -181,6 +208,9 @@ def run_observatory(*, issue_prediction=True) -> dict:
         'missing_external_features':[key for key,value in feature_values.items() if value is None],
         'calibration':'UNCALIBRATED_CURRENT_EXPERIMENT'}
     analysis={'project':'DRAGONHYDRACHILD','selected_fixture':selected,'computed_at':current['computed_at'],
+        'entity_registry':{'version':entity_document['registry_version'],'created_at':entity_document['created_at'],
+            'team_count':len(entity_document['teams']),'crosswalk_count':len(entity_document['crosswalks']),
+            'identity_scope':entity_document['identity_scope'],'source_content_hash':entity_document['source_observation']['content_hash']},
         'evidence':capture['snapshot'],'temporal_mode':'STRICT_PIT','features':current['feature_snapshot']['features'],
         'feature_snapshot':current['feature_snapshot'],'models':forecasts,'tribunal':tribunal,
         'ensemble':{'probabilities':probabilities.to_dict(),'method':tribunal['weighting_method']},
@@ -194,8 +224,8 @@ def run_observatory(*, issue_prediction=True) -> dict:
         'ml_training_frame_status':current['ml_training_frame_status'],
         'chain_breaks':['No real market snapshot/benchmark','No real-world lineup research benefit validated',
             'Future selected-match outcome has not occurred/been observed','Verified kickoff timezone and cross-provider identities remain incomplete']}
-    code_files=sorted((PROJECT_ROOT/'src/dragonhydra/child').glob('*.py'))
-    code_hash=_hash({path.name:hashlib.sha256(path.read_bytes()).hexdigest() for path in code_files})
+    code_hash=archive_calculation_code()
+    analysis['calculation_code_manifest_hash']=code_hash
     artifact_hash=RawEvidenceStore(PROJECT_ROOT/'runtime/child/analysis').put(encode(analysis))
     existing=next((event for event in ledger.verify() if event['kind']=='PREDICTION' and event['fixture_id']==target.fixture_id),None)
     event=existing
