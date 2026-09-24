@@ -1,5 +1,7 @@
 # Parent donor provenance
 
+Final comparison: [repository-safe donor verification](evidence/child-parent-verification.json) records 179 authored-file SHA256 checks plus unchanged tracked inventory, branch, HEAD, status, remotes and tag refs. The master roadmap remains byte-identical. This does not fingerprint mutable database contents; CHILD uses separate denied-donor-access identities.
+
 Parent path: `C:\xampp\DRAGONHYDRA`.
 Parent commit: `a773d9fe14313f0af3bef3f0aec89f3391d81fa6`.
 Parent branch: `feature/scientific-validation-spine`.

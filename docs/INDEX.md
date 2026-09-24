@@ -1,5 +1,9 @@
 # Documentation index
 
+CHILD current authority: [final report](FINAL_DRAGONHYDRACHILD_REPORT.md), [V0–V10 completion matrix](CHILD_V0_V10_COMPLETION_MATRIX.md), [execution status](CHILD_EXECUTION_STATUS.md), [operations](CHILD_OPERATIONS.md), [science](CHILD_SCIENTIFIC_REPORT.md), [scorecard](CHILD_ARCHITECTURE_SCORECARD.md), [sources](CHILD_SOURCE_REPORT.md), [security](CHILD_SECURITY_REPORT.md), [models](CHILD_MODEL_REPORT.md), [odds](CHILD_ODDS_REPORT.md), [uncertainty](CHILD_UNCERTAINTY_REPORT.md), [temporal continuum](CHILD_TEMPORAL_CONTINUUM_REPORT.md) and [isolated databases](CHILD_DATABASE_REPORT.md).
+
+The remaining index preserves the donor's historical navigation and V1 state. CHILD does not overwrite or retroactively claim the parent's milestones.
+
 Repository entry points: [baseline report](reports/GITHUB_BASELINE.md), [operations and visibility](REPOSITORY_OPERATIONS.md), [curated evidence](evidence/README.md), [testing tiers](TESTING.md) and [ADR index](architecture/ADR_INDEX.md).
 
 DRAGONHYDRA is an experimental local laboratory. V1 is the active roadmap stage; later stages are plans until their success gates have evidence. Start with the current records below. Existing document paths are retained to preserve history and working references.

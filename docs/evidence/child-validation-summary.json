@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "project": "DRAGONHYDRACHILD",
+  "curated_at": "2026-09-24T21:23:07.334702+00:00",
+  "status": "PARTIAL",
+  "measurement_commit": "5d4d7bc55de9b7d2e8b6f568c929bd65e76abcc0",
+  "scope": "Current CHILD-only measured integrated experiment; not production readiness.",
+  "tests": {
+    "checked_at": "2026-09-24T21:17:38.177198+00:00",
+    "python": "3.14.7 | packaged by Anaconda, Inc. | (main, Aug 14 2026, 10:12:46) [MSC v.1942 64 bit (AMD64)]",
+    "portable_count": 336,
+    "local_integration_count": 13,
+    "tests_run": 349,
+    "tests_passed": 349,
+    "tests_failed": 0,
+    "tests_errored": 0,
+    "tests_skipped": 0,
+    "successful": true
+  },
+  "test_evidence": {
+    "local_evidence_path": "runtime\\checkpoints\\child-full-tests-20260924T211738176834Z\\tests.json",
+    "sha256": "a7bd50102b3f12da81c895c1e09f1357178c56e2cd19860b7eeaac6688704812"
+  },
+  "donor_tests_not_applicable": 37,
+  "environment": {
+    "checked_utc": "2026-09-24T20:41:14.701558+00:00",
+    "python_version": "3.14.7",
+    "python_executable": "C:\\Users\\Administrator\\anaconda3\\envs\\codex-pytorch\\python.exe",
+    "canonical_interpreter": "C:\\Users\\Administrator\\anaconda3\\envs\\codex-pytorch\\python.exe",
+    "canonical_interpreter_matches": true,
+    "conda_environment": "codex-pytorch",
+    "numpy_version": "2.5.3",
+    "torch_version": "2.14.0+cu132",
+    "cuda_runtime": "13.2",
+    "cudnn_version_encoded": 92400,
+    "cudnn_available": true,
+    "cuda_available": true,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050",
+    "gpu_memory_bytes": 6441795584,
+    "gpu_capability": [
+      8,
+      6
+    ],
+    "matrix_shape": [
+      96,
+      96
+    ],
+    "reference": "NumPy float64; Torch output float32",
+    "matrix_max_absolute_error": 5.763398931435404e-06,
+    "absolute_tolerance": 0.0001,
+    "matrix_passed": true,
+    "runtime_seconds": 0.13157489999866812,
+    "cpu_fallback_used": false,
+    "gpu_baseline_passed": true,
+    "timing_scope": "one smoke operation including transfers; not a performance benchmark"
+  },
+  "dependencies_added": [],
+  "source_metrics": {
+    "source_id": "openfootball",
+    "attempts": 4,
+    "successful_acquisitions": 2,
+    "validated_acquisition_rate": 0.5,
+    "transport_availability_rate": 1.0,
+    "local_parser_gate_failures": 2,
+    "mean_latency_seconds": 2.8731526499996107,
+    "observed_content_revisions": 0,
+    "provider_timestamp_quality": "UNKNOWN",
+    "authority": "COMMUNITY_DATASET",
+    "terms_compatibility": "REVIEWED_CC0",
+    "long_term_reliability": "INSUFFICIENT_HISTORY",
+    "correction_accuracy": null,
+    "entity_resolution_accuracy": null
+  },
+  "real_provider_count": 2,
+  "real_fixture_provider_count": 1,
+  "real_odds_provider_count": 0,
+  "current_entities": {
+    "competitions": 1,
+    "teams": 20,
+    "fixtures": 380,
+    "players": 0
+  },
+  "prospective_fixture_captures": [
+    {
+      "snapshot_id": "a60aa52e412544d8a97d4ad3aa09a982",
+      "retrieved_at": "2026-09-24T20:42:33.975995+00:00",
+      "available_at": "2026-09-24T20:42:33.987245+00:00",
+      "content_hash": "bb91f0ab3e8359df163bb9ec98549bfed85e200dd4c32f3bd606b5890d932dd2",
+      "count": 380
+    },
+    {
+      "snapshot_id": "9b3c3236abdc404284a9e593841ed116",
+      "retrieved_at": "2026-09-24T20:45:41.929758+00:00",
+      "available_at": "2026-09-24T20:45:41.940909+00:00",
+      "content_hash": "bb91f0ab3e8359df163bb9ec98549bfed85e200dd4c32f3bd606b5890d932dd2",
+      "count": 380
+    }
+  ],
+  "strict_current_training_matches": 45,
+  "feature_count": 22,
+  "model_count": 7,
+  "selected_fixture": {
+    "fixture_id": "01bbc5f8-6b8d-5ece-b0ec-9b2a349a8b4c",
+    "home_team": "Manchester United FC",
+    "away_team": "Tottenham Hotspur FC",
+    "match_date": "2026-10-10",
+    "actual_utc_kickoff_verified": false,
+    "earliest_global_date_bound": "2026-10-09T10:00:00+00:00"
+  },
+  "prospective_prediction_count": 1,
+  "prospective_outcomes_scored": 0,
+  "prospective_anchors": [
+    {
+      "prediction_id": "9111f65c-7ff9-46fa-bce1-f0d904d72948",
+      "fixture_id": "01bbc5f8-6b8d-5ece-b0ec-9b2a349a8b4c",
+      "prediction_issued_at": "2026-09-24T20:55:34.109013+00:00",
+      "hash": "cff53aff78df080d5e78b77adfcd3f31d19575a93e6108e7fa507d8422002b90",
+      "code_hash": "097c5f00043a89d4e12cb75efe0d6bac6d944c6b50aa75029572a572479a906f",
+      "analysis_artifact_hash": "0da25b128e6c48fc8f1b04fc0220804a16fc9884f6f1574706d91aa53c404640",
+      "temporal_mode": "STRICT_PIT",
+      "synthetic": false,
+      "probabilities": [
+        0.49832429371223036,
+        0.22872402624968832,
+        0.2729516800380813
+      ],
+      "schedule_time_semantics": "DATE_EARLIEST_GLOBAL_BOUND"
+    }
+  ],
+  "first_prediction_limit": "Initial code fingerprint preceded source-bundle archival; exact original uncommitted source bytes are not claimed retained. Subsequent analyses archive source/config bundles; original event is never rewritten.",
+  "research": {
+    "active_real_gaps": [
+      "verified kickoff timezone",
+      "confirmed lineup",
+      "lawful real odds"
+    ],
+    "label": "SYNTHETIC_CONTROLLED_RESEARCH_LOOP",
+    "ranking": [
+      {
+        "approved_sources": [
+          "synthetic-validated-source"
+        ],
+        "deadline": "2026-10-09T10:00:00+00:00",
+        "estimate_kind": "DECLARED_SCENARIO_SENSITIVITY_NOT_VALIDATED_CAUSAL_VOI",
+        "estimated_cost": 0.0,
+        "estimated_entropy_gain": 0.09575459952932186,
+        "feasible": true,
+        "maximum_probability_total_variation": 0.2,
+        "need_id": "controlled-lineup-availability",
+        "priority_score": 0.0941848519960543
+      }
+    ],
+    "real_world_accuracy_gain": "UNMEASURED; no outcome for this controlled information intervention",
+    "result": {
+      "availability": {
+        "assumption_reason": "Controlled experiment; no real player or injury claim",
+        "availability_mode": "STRICT_PIT",
+        "availability_policy": "SYNTHETIC_CONTROL_CLOCK",
+        "availability_policy_version": "1",
+        "available_at": "2026-09-24T21:15:44.618964+00:00",
+        "confidence": 1.0,
+        "ingested_at": "2026-09-24T21:15:44.618964+00:00",
+        "observed_at": "2026-09-24T21:15:44.618964+00:00",
+        "retrieved_at": "2026-09-24T21:15:44.618964+00:00",
+        "source": "synthetic-validated-source"
+      },
+      "completeness_after": 1.0,
+      "completeness_before": 0.5,
+      "content_hash": "ab7d656c0b851bfa26cc5d2b79a88a93521860c0543913cf1ab2e17c0c45ca16",
+      "entropy_after": 0.9376369622724492,
+      "entropy_before": 1.0888999753452238,
+      "entropy_reduction": 0.15126301307277457,
+      "evidence_id": "synthetic-answer",
+      "fixture_id": "01bbc5f8-6b8d-5ece-b0ec-9b2a349a8b4c",
+      "interpretation": "CONTROLLED_EXPERIMENT_REQUIRES_PROSPECTIVE_OUTCOME_VALIDATION",
+      "need_id": "controlled-lineup-availability",
+      "probabilities_after": {
+        "AWAY": 0.15,
+        "DRAW": 0.25,
+        "HOME": 0.6
+      },
+      "real_world_benefit_proven": false,
+      "source_id": "synthetic-validated-source",
+      "source_policy_version": "controlled-policy/1",
+      "state": "VALIDATED_RECALCULATED",
+      "synthetic": true
+    }
+  },
+  "gpu_benchmark": {
+    "created_at": "2026-09-24T20:41:14.702392+00:00",
+    "numpy": "2.5.3",
+    "torch": "2.14.0+cu132",
+    "workload": "BATCHED_INDEPENDENT_POISSON_SCORE_GRID_TO_HDA",
+    "dtype": "float64",
+    "max_goals": 12,
+    "repeats": 3,
+    "results": [
+      {
+        "batch_size": 1,
+        "cpu_median_seconds": 0.0001325999983237125,
+        "gpu_end_to_end_median_seconds": 0.0017905999993672594,
+        "gpu_device_only_median_seconds": 0.001697800002148142,
+        "gpu_transfer_overhead_estimate_seconds": 9.279999721911736e-05,
+        "speedup_including_transfers": 0.07405338901517317,
+        "gpu_peak_allocated_bytes": 8528896,
+        "cpu_matrix_bytes_estimate": 1352,
+        "maximum_probability_difference": 1.1102230246251565e-16,
+        "correctness_passed": true,
+        "winner": "CPU"
+      },
+      {
+        "batch_size": 256,
+        "cpu_median_seconds": 0.0002538999979151413,
+        "gpu_end_to_end_median_seconds": 0.0018611000014061574,
+        "gpu_device_only_median_seconds": 0.001827600000979146,
+        "gpu_transfer_overhead_estimate_seconds": 3.35000004270114e-05,
+        "speedup_including_transfers": 0.1364246938495012,
+        "gpu_peak_allocated_bytes": 9094656,
+        "cpu_matrix_bytes_estimate": 346112,
+        "maximum_probability_difference": 4.440892098500626e-16,
+        "correctness_passed": true,
+        "winner": "CPU"
+      },
+      {
+        "batch_size": 4096,
+        "cpu_median_seconds": 0.0041385999975318555,
+        "gpu_end_to_end_median_seconds": 0.0024171000004571397,
+        "gpu_device_only_median_seconds": 0.0019986000006610993,
+        "gpu_transfer_overhead_estimate_seconds": 0.00041849999979604036,
+        "speedup_including_transfers": 1.7122171183439383,
+        "gpu_peak_allocated_bytes": 17696256,
+        "cpu_matrix_bytes_estimate": 5537792,
+        "maximum_probability_difference": 4.440892098500626e-16,
+        "correctness_passed": true,
+        "winner": "GPU"
+      },
+      {
+        "batch_size": 32768,
+        "cpu_median_seconds": 0.04092369999852963,
+        "gpu_end_to_end_median_seconds": 0.0048907000018516555,
+        "gpu_device_only_median_seconds": 0.004027700000733603,
+        "gpu_transfer_overhead_estimate_seconds": 0.0008630000011180528,
+        "speedup_including_transfers": 8.36765697814947,
+        "gpu_peak_allocated_bytes": 82445824,
+        "cpu_matrix_bytes_estimate": 44302336,
+        "maximum_probability_difference": 5.551115123125783e-16,
+        "correctness_passed": true,
+        "winner": "GPU"
+      }
+    ],
+    "production_backend_changed": false,
+    "device": "NVIDIA GeForce RTX 3050",
+    "cuda_first_operation_seconds": 0.021131100002094172,
+    "status": "COMPLETE",
+    "limitation": "Three timing repeats on one machine; no model-accuracy advantage or general GPU superiority."
+  },
+  "medusa_fault_injection": {
+    "label": "SYNTHETIC_CONTROLLED_FAULT_INJECTION",
+    "faults": 7,
+    "detected": 7,
+    "valid_controls": 1,
+    "false_positives": 0,
+    "cases": [
+      {
+        "case": "wrong_entity",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "REJECT",
+        "reason_codes": [
+          "ENTITY_UNRESOLVED"
+        ]
+      },
+      {
+        "case": "future_timestamp",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "REJECT",
+        "reason_codes": [
+          "FUTURE_TIMESTAMP"
+        ]
+      },
+      {
+        "case": "stale_record",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "QUARANTINE",
+        "reason_codes": [
+          "STALE_DATA"
+        ]
+      },
+      {
+        "case": "schema_mutation",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "REJECT",
+        "reason_codes": [
+          "SCHEMA_CHANGED"
+        ]
+      },
+      {
+        "case": "missing_provenance",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "REJECT",
+        "reason_codes": [
+          "MISSING_PROVENANCE"
+        ]
+      },
+      {
+        "case": "duplicate",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "REJECT",
+        "reason_codes": [
+          "DUPLICATE"
+        ]
+      },
+      {
+        "case": "conflicting_observation",
+        "detected": true,
+        "fixture_id": "4782c111-bf8d-4ecb-b2d8-143d2bef73ba",
+        "verdict": "QUARANTINE",
+        "reason_codes": [
+          "CONFLICTING_DATA"
+        ]
+      }
+    ],
+    "limitation": "Seven engineered faults do not estimate real-world catch rate."
+  },
+  "logical_heads": [
+    {
+      "head": "MATCH",
+      "maturity": "VALIDATED",
+      "operational_status": "ACTIVE",
+      "allowed_sources": [
+        "openfootball"
+      ],
+      "last_failure": null
+    },
+    {
+      "head": "PLAYER",
+      "maturity": "CONCEPT",
+      "operational_status": "SOURCE_UNAVAILABLE",
+      "allowed_sources": [],
+      "last_failure": "PLAYER_IDENTITY_DEFERRED_NO_APPROVED_SOURCE"
+    },
+    {
+      "head": "TEAM",
+      "maturity": "VALIDATED",
+      "operational_status": "ACTIVE",
+      "allowed_sources": [
+        "openfootball"
+      ],
+      "last_failure": null
+    },
+    {
+      "head": "INJURY",
+      "maturity": "CONCEPT",
+      "operational_status": "NOT_STARTED",
+      "allowed_sources": [],
+      "last_failure": null
+    },
+    {
+      "head": "LINEUP",
+      "maturity": "CONCEPT",
+      "operational_status": "NOT_STARTED",
+      "allowed_sources": [],
+      "last_failure": null
+    },
+    {
+      "head": "COACH",
+      "maturity": "CONCEPT",
+      "operational_status": "NOT_STARTED",
+      "allowed_sources": [],
+      "last_failure": null
+    },
+    {
+      "head": "WEATHER",
+      "maturity": "EXPERIMENTAL",
+      "operational_status": "ACTIVE",
+      "allowed_sources": [
+        "met-norway"
+      ],
+      "last_failure": null
+    },
+    {
+      "head": "TRAVEL",
+      "maturity": "CONCEPT",
+      "operational_status": "NOT_STARTED",
+      "allowed_sources": [],
+      "last_failure": null
+    },
+    {
+      "head": "TACTICAL",
+      "maturity": "CONCEPT",
+      "operational_status": "NOT_STARTED",
+      "allowed_sources": [],
+      "last_failure": null
+    },
+    {
+      "head": "NEWS",
+      "maturity": "CONCEPT",
+      "operational_status": "NOT_STARTED",
+      "allowed_sources": [],
+      "last_failure": null
+    },
+    {
+      "head": "ODDS",
+      "maturity": "CONCEPT",
+      "operational_status": "SOURCE_UNAVAILABLE",
+      "allowed_sources": [],
+      "last_failure": "AUTH_REQUIRED_OR_TERMS_BLOCKED"
+    },
+    {
+      "head": "MARKET",
+      "maturity": "CONCEPT",
+      "operational_status": "SOURCE_UNAVAILABLE",
+      "allowed_sources": [],
+      "last_failure": "AUTH_REQUIRED_OR_TERMS_BLOCKED"
+    },
+    {
+      "head": "HISTORICAL",
+      "maturity": "VALIDATED",
+      "operational_status": "ACTIVE",
+      "allowed_sources": [
+        "openfootball"
+      ],
+      "last_failure": null
+    }
+  ],
+  "database_counts_including_labelled_test_canaries": {
+    "entities": {
+      "identities": 26,
+      "versions": 32
+    },
+    "evaluations": {
+      "identities": 0,
+      "versions": 0
+    },
+    "fixtures": {
+      "identities": 380,
+      "versions": 760
+    },
+    "predictions": {
+      "identities": 1,
+      "versions": 1
+    },
+    "snapshots": {
+      "identities": 3,
+      "versions": 3
+    },
+    "sources": {
+      "identities": 2,
+      "versions": 2
+    }
+  },
+  "scheduler": {
+    "task": "DRAGONHYDRACHILD-Prospective",
+    "daily": true,
+    "requires_owner_signed_in": true,
+    "latest_job_id": "8454665d2f574f6289d9505c25e48cfb",
+    "latest_job_status": "COMPLETE",
+    "completed_job_receipts": 3,
+    "sustained_multi_day_evidence": false
+  },
+  "limitations": [
+    "No real market snapshot/benchmark",
+    "No real-world lineup research benefit validated",
+    "Future selected-match outcome has not occurred/been observed",
+    "Verified kickoff timezone and cross-provider identities remain incomplete",
+    "One reconstructed historical season; no true historical strict data.",
+    "Cross-provider identities/player aliases and full clean-machine infrastructure reproduction not demonstrated.",
+    "Historical Desktop IAB failure retained; inherited database-bound handoff consumer is not migrated to CHILD.",
+    "Weather is a London-proxy future hypothesis, not verified stadium observations or a validated model input.",
+    "No profitability, market superiority or calibration generalization claim."
+  ],
+  "security": {
+    "all_local_checked_at": "2026-09-24T21:25:20.125858+00:00",
+    "counts": {
+      "files": 1980,
+      "candidate_files": 240,
+      "bytes": 90337393,
+      "nontext_or_large_files_not_pattern_scanned": 223,
+      "files_checked_for_known_local_secret_bytes": 1978,
+      "text_files_scanned": 1757,
+      "excluded_files": 1740,
+      "reviewed_synthetic_findings": 3
+    },
+    "known_local_secret_values_compared": 4,
+    "blocking_findings": 0,
+    "omitted_links": [],
+    "locked_ignored_database_files": 2,
+    "candidate_secret_findings": 0,
+    "staged_tracked_count": 240,
+    "staged_passed": true,
+    "limitations": [
+      "Literal/token patterns cannot prove absence of arbitrary encoded or novel secrets.",
+      "Pattern scan covers recognized UTF-8 or BOM-marked UTF-16 text up to 8 MiB; local known-secret matching streams UTF-8 and UTF-16 variants across all regular-file bytes.",
+      "Local credentials are read only in all-local mode and remain in memory; values and matching lines are never reported.",
+      "The .git directory and symlink/junction targets are not read; tracked mode audits working-tree content, not historical commits."
+    ]
+  },
+  "repository_links": {
+    "markdown_files": 89,
+    "links_checked": 528,
+    "broken_links": [],
+    "passed": true
+  },
+  "identity_reparse": {
+    "checked_at": "2026-09-24T21:26:29.439882+00:00",
+    "classification": "OFFLINE_REPARSE_OF_GENUINE_CAPTURE_NOT_NEW_ACQUISITION",
+    "snapshot_id": "9b3c3236abdc404284a9e593841ed116",
+    "raw_hash": "bb91f0ab3e8359df163bb9ec98549bfed85e200dd4c32f3bd606b5890d932dd2",
+    "fixture_count": 380,
+    "identities_unchanged": true,
+    "medusa_accepted": 380,
+    "new_parser_version": "child-openfootball/1.1",
+    "registry_mapping_knowledge_retained": true
+  },
+  "entity_registry": {
+    "created_at": "2026-09-24T21:11:53.687659+00:00",
+    "crosswalk_count": 20,
+    "identity_scope": "DECLARED_SOURCE_SCOPE_NOT_PROVIDER_ISSUED",
+    "source_content_hash": "bb91f0ab3e8359df163bb9ec98549bfed85e200dd4c32f3bd606b5890d932dd2",
+    "team_count": 20,
+    "version": 1
+  },
+  "subsequent_source_bundle_manifest_hash": "cec948e4a02f9b74d6f1badc63b3e226da9a07a47b4b158b53dd0a5829a993c7",
+  "publication": {
+    "verified_implementation_commit": "5d4d7bc55de9b7d2e8b6f568c929bd65e76abcc0",
+    "visibility": "PRIVATE",
+    "repository_url": "https://github.com/chatgptopenaiagi/DRAGONHYDRACHILD",
+    "default_branch": "main",
+    "implementation_ci": "https://github.com/chatgptopenaiagi/DRAGONHYDRACHILD/actions/runs/36060515343",
+    "implementation_security": "https://github.com/chatgptopenaiagi/DRAGONHYDRACHILD/actions/runs/36060515291",
+    "implementation_actions_conclusion": "success",
+    "final_documentation_head": "Recorded after this artifact in local publication checkpoint and session handoff; not a self-referential hash."
+  }
+}

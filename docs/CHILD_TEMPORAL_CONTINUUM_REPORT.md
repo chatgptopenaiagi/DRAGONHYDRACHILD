@@ -32,4 +32,10 @@ The shared intelligence suite has 25 passing Python 3.14 tests. No parent projec
 
 LOCAL FORENSIC EVIDENCE = ignored `runtime/checkpoints` and runtime ledger files. REPOSITORY-SAFE EVIDENCE = small sanitized summaries under `docs/evidence`; raw records, credentials and datasets remain local.
 
-NEXT_EXACT_ACTION: issue a genuine pre-kickoff prediction from actually available approved inputs, retain its head-hash anchor, then append and evaluate the later observed result without changing the issued prediction.
+## Genuine CHILD issuance and source-bundle boundary
+
+A real-source forecast was issued at `2026-09-24T20:55:34.109013+00:00` for the source-reported Manchester United–Tottenham fixture dated 2026-10-10. It uses the conservative date lower bound, not verified kickoff precision. [Curated validation](evidence/child-validation-summary.json) retains its immutable hash, evidence/model references and actual issue clock. SQL and the dashboard expose it; no actual outcome has been observed.
+
+That first event predates exact source-bundle retention. Its code fingerprint is genuine, but this experiment does not claim its complete original uncommitted source bytes were archived. Later observatory calculations retain every source/config byte in a content-addressed local bundle, with a tested stable manifest hash. The first event is not rewritten to manufacture that missing history.
+
+NEXT_EXACT_ACTION: retain the original hash anchor and append/evaluate the later genuinely observed result. Preserve the explicit observed-by upper bound if an exact final-whistle timestamp is unavailable.

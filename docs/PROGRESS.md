@@ -1,5 +1,9 @@
 # DRAGONHYDRA progress
 
+## 2026-09-24 CHILD continuous experiment — current CHILD authority
+
+The protected parent was inherited read-only. CHILD attempted V0–V10 in independent private history with separate databases and presentation. Five tested implementation milestones culminate at `5d4d7bc55de9b7d2e8b6f568c929bd65e76abcc0`; 349 applicable tests pass (336 portable, 13 local). [Final report](FINAL_DRAGONHYDRACHILD_REPORT.md), [execution status](CHILD_EXECUTION_STATUS.md), [stage matrix](CHILD_V0_V10_COMPLETION_MATRIX.md) and [CHILD decisions](CHILD_DECISIONS.md) supersede inherited statements about CHILD's active work. Original donor history below is preserved.
+
 ## 2026-09-24 Scientific Validation Spine Phase A — current
 
 Verified clean local main = origin/main = `v0.1.0-alpha^{commit}` at `4d1b4b3d1960cdd047a9c857aafdc544961b9426` before creating `feature/scientific-validation-spine`. The new unique baseline manifest preserves the original 165 tracked-file hashes. No old checkpoint or tag is rewritten.

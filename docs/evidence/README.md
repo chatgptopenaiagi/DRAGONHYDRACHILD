@@ -1,5 +1,7 @@
 # Repository-safe evidence
 
+CHILD current evidence: [integrated validation](child-validation-summary.json), [V0–V10 stage gates](child-stage-summary.json), [donor unchanged proof](child-parent-verification.json), [scientific comparison](child-science-summary.json), [exact replay](child-science-replay.json), and [weather policy/capture](child-weather-summary.json). The records below are inherited donor history, not fresh CHILD validation.
+
 Current scientific block: [Scientific Validation Spine Phase A](scientific-spine-summary.json) contains only aggregate results, counts, assumptions and hashes. Full reconstructed inputs, forecasts, raw bytes and acquisition receipts remain local. See the [scientific report](../SCIENTIFIC_VALIDATION_SPINE.md).
 
 DRAGONHYDRA separates **LOCAL FORENSIC EVIDENCE** from **REPOSITORY-SAFE EVIDENCE**. The original checkpoint tree remains authoritative local history under ignored `runtime/checkpoints/`. This directory contains small, reviewed summaries that can be read from a clean GitHub checkout without exposing that tree.

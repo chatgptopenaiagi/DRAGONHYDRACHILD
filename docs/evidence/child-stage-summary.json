@@ -1,0 +1,107 @@
+{
+  "curated_at": "2026-09-24T21:23:07.334702+00:00",
+  "status": "PARTIAL",
+  "stages": [
+    {
+      "version": "V0",
+      "status": "COMPLETE",
+      "success_gate_evidence": "Local foundation independently revalidated: Python 3.14, two isolated databases, seven denials, GPU correctness and HTTP200.",
+      "limitations": "Full clean-machine service reproduction remains a separate unproved gate.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v0-closure-20260924T212307334718Z",
+      "gate_sha256": "1c4266f14e3581efdd2bece8de662545bd037bced8333f84c8476cf8016f5277",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V1",
+      "status": "COMPLETE",
+      "success_gate_evidence": "Two genuine fixture captures: 380 source records each; raw/provenance/Medusa/SQL/Maria/CHILD Joomla path.",
+      "limitations": "CLI/API producer validated; inherited Desktop rendered-page producer remains blocked.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v1-closure-20260924T212307334718Z",
+      "gate_sha256": "1a69ad93ab2bdf6a0f1f8252a4a58ce45fac683d12aa573fa3a855cfc1706d4c",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V2",
+      "status": "PARTIAL",
+      "success_gate_evidence": "Two real bounded adapters, explicit identities, immutable prospective clock, daily task and source failures.",
+      "limitations": "One fixture provider; no lawful real odds; short commissioning window does not prove sustained reliability.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v2-closure-20260924T212307334718Z",
+      "gate_sha256": "23ab3e971b8f1fa5bf4fd80b81623f17d8608d0137297e70412a931310c51ad0",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V3",
+      "status": "COMPLETE",
+      "success_gate_evidence": "22 scoped feature outputs; point-in-time lineage and all321 forecasts exactly reproducible.",
+      "limitations": "Lineup, injury and market features remain explicitly missing; feature value is not universal.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v3-closure-20260924T212307334718Z",
+      "gate_sha256": "964f1fc777decd11108c02e87df41ed6952b2ed7dbc559b37eccced1a68f9e4b",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V4",
+      "status": "COMPLETE",
+      "success_gate_evidence": "Seven distinct methods share typed inputs/output; chronological comparison and CPU/GPU measurements.",
+      "limitations": "Experimental mathematical implementation; no predictive superiority or new runtime justified.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v4-closure-20260924T212307334718Z",
+      "gate_sha256": "1ecffcfdb5c3416133b21678fffa62bfbda1be56c4079f301fae018db2d32103",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V5",
+      "status": "PARTIAL",
+      "success_gate_evidence": "Poisson/DC finite matrices, seeded Monte Carlo and explicit scenario mixtures are implemented/tested.",
+      "limitations": "Strict historical observation history and empirically validated scenario effects unavailable.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v5-closure-20260924T212307334718Z",
+      "gate_sha256": "ffdb69822be1564242a8decb677a08a35361374be5609750c6009989278a88bb",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V6",
+      "status": "COMPLETE",
+      "success_gate_evidence": "Equal/prior-loss ensembles, transparent disagreement, score/calibration and evidence diagnostics.",
+      "limitations": "Current predictions use equal weighting; no external stacking validation or superiority claim.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v6-closure-20260924T212307334718Z",
+      "gate_sha256": "a52b5ad5bd3514fd91ecdfd5dbd8818b9c1cbac49f764ace798c5a75460399e4",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V7",
+      "status": "PARTIAL",
+      "success_gate_evidence": "Typed markets/providers, temporal trajectories, overround, proportional/power normalization and fair-odds tests.",
+      "limitations": "Real market gate BLOCKED: terms prohibit one source; alternative needs authorized API credentials.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v7-closure-20260924T212307334718Z",
+      "gate_sha256": "e179630283e071aa57dfbb734f837719896d294f474a083f0b67b6756c8cb1bf",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V8",
+      "status": "PARTIAL",
+      "success_gate_evidence": "Bounded need ranking, policy gate, acquisition/validation/recalculation and measured controlled entropy change.",
+      "limitations": "Controlled synthetic intervention only; real-world uncertainty-reduction benefit not demonstrated.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v8-closure-20260924T212307334718Z",
+      "gate_sha256": "b0db937bf007ce9896df6ddb3b887cfe24802a55e93d9edbd952948ced05bc39",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V9",
+      "status": "PARTIAL",
+      "success_gate_evidence": "Walk-forward proper scores, calibration, ablations, replay, scheduled outcome-scoring and immutable forecast ledger.",
+      "limitations": "No prospective actual outcome yet; one season and no market/source incremental-value benchmark.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v9-closure-20260924T212307334718Z",
+      "gate_sha256": "e1e38df6b990a7555b9f3e4423cbde8b525f8b8b0b976a09ae8c9257408a1892",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    },
+    {
+      "version": "V10",
+      "status": "PARTIAL",
+      "success_gate_evidence": "Thirteen typed logical heads share acquisition and expose explicit availability/maturity on dashboard.",
+      "limitations": "Only match/team/historical/weather operational; other heads lack approved relevant data/identity proof.",
+      "local_evidence_path": "runtime\\checkpoints\\child-v10-closure-20260924T212307334718Z",
+      "gate_sha256": "3df63b3ed3ed7945e99cd9cf1fab35007e3da6c5d2f9ce5408bedb23cc9892af",
+      "files_manifest_sha256": "d56295d8251100422eb5ff367246ac153d54a1271df7d9df7e01c02301b813b8"
+    }
+  ],
+  "status_meaning": "COMPLETE refers to the declared scoped experimental gate, never production maturity; every version attempted.",
+  "checkpoint_note": "Original donor and all earlier CHILD checkpoints preserved. These stage closure checkpoints were created after integrated validation, not claimed as earlier stage-by-stage timestamps."
+}

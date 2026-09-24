@@ -1,5 +1,7 @@
 # DRAGONHYDRA decisions
 
+CHILD-specific current decisions are in [CHILD_DECISIONS](CHILD_DECISIONS.md). The entries below remain unchanged donor history and architectural context; they do not authorize donor modifications.
+
 ## Scientific D023: evaluation discipline, reconstruction and prospective clocks
 
 **Date:** 2026-09-24. **Status:** ACCEPTED for experimental Phase A, owner-directed.
