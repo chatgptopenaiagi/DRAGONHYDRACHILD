@@ -15,6 +15,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTABLE_CLASSES = {
+    "test_child_science.ChildFeatureTests",
+    "test_child_science.ChildSimulationTests",
+    "test_child_science.ChildModelTests",
+    "test_child_science.ChildEvaluationTests",
     "test_child_acquisition.ChildAcquisitionTests",
     "test_child_storage.ChildStorageTests",
     "test_child_weather.ChildWeatherTests",

@@ -1,0 +1,11 @@
+{
+  "all_metrics_equal": true,
+  "computed_at": "2026-09-24T20:45:53.069108+00:00",
+  "cpu_runtime_seconds": 26.69344309999724,
+  "evaluation_matches": 321,
+  "replay_hash": "17429689fa0ec638e53e1d8ad805a68ec6b6717bc1f85ac1481a258c224b60a3",
+  "replay_hash_equal": true,
+  "schema_version": "child-frozen-replay/1",
+  "source_checkpoint": "runtime/checkpoints/child-v3-v6-science-20260924T204411Z-7664718c",
+  "timestamp_semantics": "ORIGINAL_RECORDED_CAPTURE_REPLAYED; COMPUTATION_CLOCK_IS_NEW"
+}

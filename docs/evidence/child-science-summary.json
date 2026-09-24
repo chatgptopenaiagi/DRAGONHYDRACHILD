@@ -1,0 +1,372 @@
+{
+  "checkpoint": "runtime/checkpoints/child-v3-v6-science-20260924T204411Z-7664718c",
+  "child_derived_ingested_at": "2026-09-24T20:44:11.221548+00:00",
+  "computed_at": "2026-09-24T20:44:11.221548+00:00",
+  "cpu_runtime_seconds": 25.453831800001353,
+  "decision_horizon": "DAY_START_UTC_PROXY",
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.14.7"
+  },
+  "evaluation_matches": 321,
+  "feature_outputs": 22,
+  "historical_metrics_and_indicators": 16,
+  "historical_strict_pit_records": 0,
+  "inference_status": [
+    "DEMONSTRATION_ONLY",
+    "INSUFFICIENT_SAMPLE_FOR_STRONG_INFERENCE"
+  ],
+  "input_matches": 380,
+  "limitations": [
+    "ONE_SEASON_DEMONSTRATION",
+    "NO_REAL_ODDS_BENCHMARK_IN_THIS_HARNESS",
+    "NO_PROFITABILITY_INFERENCE",
+    "NO_TRUE_HISTORICAL_CAPTURE_RECOVERY",
+    "NO_COMPLETE_HISTORICAL_SCHEDULE_REVISION_RECOVERY",
+    "FEATURE_AND_HYPERPARAMETER_SELECTION_NOT_EXTERNALLY_VALIDATED"
+  ],
+  "metrics": {
+    "DIXON_COLES": {
+      "accuracy_secondary": 0.5358255451713395,
+      "brier": 0.5810836136794333,
+      "brier_per_class": [
+        0.22170310882534186,
+        0.17058002148558488,
+        0.18880048336850655
+      ],
+      "classwise_ece_5bins": [
+        0.023021252557315984,
+        0.009796351715634576,
+        0.02642274493657509
+      ],
+      "log_loss": 0.9794202310221061,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.2052517960969242
+    },
+    "ELO": {
+      "accuracy_secondary": 0.5451713395638629,
+      "brier": 0.58753796014825,
+      "brier_per_class": [
+        0.22415680333998309,
+        0.1715148439828641,
+        0.19186631282540276
+      ],
+      "classwise_ece_5bins": [
+        0.06496492261283285,
+        0.03883219422688194,
+        0.06662839232933113
+      ],
+      "log_loss": 0.9898158860868436,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.20801155808269292
+    },
+    "ENSEMBLE_EQUAL": {
+      "accuracy_secondary": 0.5607476635514018,
+      "brier": 0.5885920072150967,
+      "brier_per_class": [
+        0.22471775417557918,
+        0.17131008846266219,
+        0.1925641645768554
+      ],
+      "classwise_ece_5bins": [
+        0.06813725708759813,
+        0.013256849984862481,
+        0.07085767927750629
+      ],
+      "log_loss": 0.9912295271838636,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.20864095937621727
+    },
+    "ENSEMBLE_PAST_LOSS": {
+      "accuracy_secondary": 0.5607476635514018,
+      "brier": 0.5883036501494685,
+      "brier_per_class": [
+        0.22455346540206234,
+        0.17131144587876873,
+        0.19243873886863755
+      ],
+      "classwise_ece_5bins": [
+        0.07001694700942386,
+        0.013317185363082537,
+        0.06781985895805218
+      ],
+      "log_loss": 0.9908134860588947,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.20849610213534994
+    },
+    "KNN": {
+      "accuracy_secondary": 0.5358255451713395,
+      "brier": 0.6137071651090342,
+      "brier_per_class": [
+        0.23672436264225316,
+        0.1747925805836353,
+        0.20219022188314575
+      ],
+      "classwise_ece_5bins": [
+        0.03126390743213174,
+        0.07999554962171782,
+        0.022919448153093012
+      ],
+      "log_loss": 1.0301230171730669,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.2194572922626995
+    },
+    "KNN_ABLATION_NO_FORM_REST": {
+      "accuracy_secondary": 0.5545171339563862,
+      "brier": 0.5884910038781868,
+      "brier_per_class": [
+        0.22390965732087229,
+        0.17557537033504989,
+        0.1890059762222646
+      ],
+      "classwise_ece_5bins": [
+        0.04138851802403208,
+        0.05006675567423233,
+        0.03760569648420119
+      ],
+      "log_loss": 0.9952003456382864,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.20645781677156844
+    },
+    "LEAGUE_EMPIRICAL": {
+      "accuracy_secondary": 0.470404984423676,
+      "brier": 0.6396001257523983,
+      "brier_per_class": [
+        0.25106299706061136,
+        0.1715148439828641,
+        0.21702228470892287
+      ],
+      "classwise_ece_5bins": [
+        0.01799325571383692,
+        0.03883219422688194,
+        0.026013716585262803
+      ],
+      "log_loss": 1.0585004123815742,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.23404264088476712
+    },
+    "POISSON": {
+      "accuracy_secondary": 0.5358255451713395,
+      "brier": 0.5820885598647922,
+      "brier_per_class": [
+        0.22236966830471097,
+        0.17124998560915755,
+        0.18846890595092375
+      ],
+      "classwise_ece_5bins": [
+        0.02831466742326192,
+        0.0021004626544674832,
+        0.021114465938566678
+      ],
+      "log_loss": 0.9812220480931407,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.20541928712781737
+    },
+    "POISSON_GLM": {
+      "accuracy_secondary": 0.5638629283489096,
+      "brier": 0.5770283161990297,
+      "brier_per_class": [
+        0.21747070366147173,
+        0.17068761888154466,
+        0.18886999365601329
+      ],
+      "classwise_ece_5bins": [
+        0.08045710819487077,
+        0.013776639871729796,
+        0.06004163485772318
+      ],
+      "log_loss": 0.9734954518661457,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.20317034865874253
+    },
+    "UNIFORM": {
+      "accuracy_secondary": 0.470404984423676,
+      "brier": 0.6666666666666667,
+      "brier_per_class": [
+        0.2679127725856698,
+        0.18380062305295952,
+        0.21495327102803743
+      ],
+      "classwise_ece_5bins": [
+        0.1370716510903427,
+        0.11526479750778813,
+        0.02180685358255452
+      ],
+      "log_loss": 1.0986122886681098,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.24143302180685364
+    },
+    "VENUE_EMPIRICAL": {
+      "accuracy_secondary": 0.5358255451713395,
+      "brier": 0.6061503253307738,
+      "brier_per_class": [
+        0.2313071230927161,
+        0.17651155082942263,
+        0.1983316514086352
+      ],
+      "classwise_ece_5bins": [
+        0.04810104396362138,
+        0.0540718630706978,
+        0.0339480758718983
+      ],
+      "log_loss": 1.0210006211675053,
+      "log_loss_infinite": false,
+      "matches": 321,
+      "rps": 0.21481938725067565
+    }
+  },
+  "missing_external_fields_and_indicators": 6,
+  "model_count": 7,
+  "model_ids": [
+    "LEAGUE_EMPIRICAL",
+    "VENUE_EMPIRICAL",
+    "ELO",
+    "POISSON",
+    "DIXON_COLES",
+    "POISSON_GLM",
+    "KNN"
+  ],
+  "original_observed_at": "2026-09-24T17:56:42.321374+00:00",
+  "original_retrieved_at": "2026-09-24T17:56:42.321374+00:00",
+  "packages_added": [],
+  "paired_log_loss": {
+    "DIXON_COLES": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.12090248636347929,
+        -0.03592476292514907
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.0790801813594682,
+      "resamples": 400,
+      "seed": 0
+    },
+    "ELO": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.08920209285837132,
+        -0.047602245379159795
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.06868452629473058,
+      "resamples": 400,
+      "seed": 0
+    },
+    "ENSEMBLE_EQUAL": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.09312412167947276,
+        -0.04231385615604104
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.06727088519771074,
+      "resamples": 400,
+      "seed": 0
+    },
+    "ENSEMBLE_PAST_LOSS": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.09365567653445442,
+        -0.04239932369237823
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.0676869263226795,
+      "resamples": 400,
+      "seed": 0
+    },
+    "KNN": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.06630727836470707,
+        0.01229569866151746
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.028377395208507537,
+      "resamples": 400,
+      "seed": 0
+    },
+    "KNN_ABLATION_NO_FORM_REST": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.09616150400938701,
+        -0.028531504969014507
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.06330006674328784,
+      "resamples": 400,
+      "seed": 0
+    },
+    "LEAGUE_EMPIRICAL": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        0.0,
+        0.0
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": 0.0,
+      "resamples": 400,
+      "seed": 0
+    },
+    "POISSON": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.12085252816256206,
+        -0.034201273500723356
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.07727836428843354,
+      "resamples": 400,
+      "seed": 0
+    },
+    "POISSON_GLM": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.11612120578677709,
+        -0.050022377079556
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.08500496051542861,
+      "resamples": 400,
+      "seed": 0
+    },
+    "UNIFORM": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        0.005938236493647148,
+        0.0730838739202043
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": 0.04011187628653555,
+      "resamples": 400,
+      "seed": 0
+    },
+    "VENUE_EMPIRICAL": {
+      "benchmark": "LEAGUE_EMPIRICAL",
+      "date_block_bootstrap_95pct": [
+        -0.06547931662053344,
+        -0.006330227156981138
+      ],
+      "limitation": "within-season dependent sample; not robust multi-season inference",
+      "mean_log_loss_difference": -0.03749979121406905,
+      "resamples": 400,
+      "seed": 0
+    }
+  },
+  "raw_source_changes": "NONE_RETAINED_BYTES_ONLY",
+  "replay_hash": "17429689fa0ec638e53e1d8ad805a68ec6b6717bc1f85ac1481a258c224b60a3",
+  "schema_version": "child-science-summary/1",
+  "source_hash": "03e13eafbf78dfe00d7e89dd3bf6643986eb6e8fd86c7664aeb8c5bc0bed88d0",
+  "source_url": "https://raw.githubusercontent.com/openfootball/football.json/master/2023-24/en.1.json",
+  "status": "PARTIAL",
+  "temporal_mode": "RECONSTRUCTED_PIT"
+}
