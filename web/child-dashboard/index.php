@@ -26,6 +26,8 @@ if (($_GET['format'] ?? '') === 'json') {
 function h(mixed $value): string { return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 require_once __DIR__ . '/localai-status.php';
 $localai = localai_status();
+require_once __DIR__ . '/cognitive-status.php';
+$cognitive = cognitive_status();
 $analysis = $data['analysis'] ?? [];
 $fixture = $analysis['selected_fixture'] ?? [];
 ?>
@@ -36,6 +38,13 @@ $fixture = $analysis['selected_fixture'] ?? [];
 <section class="stats"><article><strong><?=h($data['counts']['fixtures']['identities'] ?? 0)?></strong><span>SQL fixture identities</span></article><article><strong><?=h($data['counts']['snapshots']['versions'] ?? 0)?></strong><span>Immutable source snapshots</span></article><article><strong><?=h($analysis['historical_evaluation']['evaluation_matches'] ?? '—')?></strong><span>Historical evaluation matches</span></article><article><strong><?=h($analysis['prospective_prediction']['status'] ?? 'PENDING')?></strong><span>Prospective prediction ledger</span></article></section>
 <nav><a href="#evidence">Evidence</a><a href="#features">Features</a><a href="#models">Models</a><a href="#simulation">Simulation</a><a href="#market">Market</a><a href="#uncertainty">Uncertainty</a><a href="#research">Research</a><a href="#heads">HYDRA</a><a href="#history">Evaluation</a></nav>
 <div class="grid">
+<section id="cognitive" class="wide"><h2>Cognitive awareness V2</h2><p class="muted">The model is not the system. Observations, interpretations and proposals retain separate identities. This cockpit is read-only.</p><p><strong><?=h($cognitive['status'] ?? 'UNKNOWN')?></strong> · machine snapshot age <?=h($cognitive['machine_snapshot_age_seconds'] ?? 'UNKNOWN')?> seconds</p><div id="cognitive-view"></div></section>
+<section><h2>ARX · machine awareness</h2><div id="machine-awareness-view"></div></section>
+<section><h2>World awareness</h2><div id="world-awareness-view"></div></section>
+<section><h2>Meaningful changes</h2><div id="cognitive-deltas-view"></div></section>
+<section><h2>Memory & limitations</h2><div id="cognitive-memory-view"></div></section>
+<section><h2>Cognitive security</h2><div id="cognitive-security-view"></div></section>
+<section><h2>Cognitive operations metrics</h2><p class="muted">These measure system behavior, not predictive accuracy.</p><div id="cognitive-metrics-view"></div></section>
 <section id="localai" class="wide"><h2>Local Qwen · analysis only</h2><p class="muted">Last reported state; a heartbeat older than three minutes is marked STALE. AI interpretations are not evidence. No machine controls are exposed.</p><dl><?php foreach ($localai as $name => $value): ?><dt><?=h(str_replace('_', ' ', $name))?></dt><dd><?=h($value)?></dd><?php endforeach; ?></dl></section>
 <section id="evidence"><h2>Evidence & time</h2><p><span class="tag">STRICT_PIT capture</span> is distinct from <span class="tag warm">RECONSTRUCTED_PIT history</span>.</p><div id="evidence-view"></div><h3>Canonical identity review</h3><div id="identity-view"></div><h3>Sources and permissions</h3><div id="source-view"></div><h3>External weather hypothesis</h3><div id="weather-view"></div><p class="muted">Weather forecast data, when available: <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation">MET Norway</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Display reformatted; London coordinate proxy, not measured stadium weather.</p></section>
 <section id="features"><h2>Feature factory</h2><p class="muted">Every snapshot retains input IDs, calculation/code version, availability, units and missingness.</p><div id="feature-view"></div></section>
@@ -49,11 +58,14 @@ $fixture = $analysis['selected_fixture'] ?? [];
 <section class="wide"><h2>System health & chain boundaries</h2><div id="health-view"></div><div id="limits-view"></div><details><summary>Inspect the full sanitized presentation payload</summary><pre id="raw-view"></pre></details></section>
 </div></main><footer>SQL Server owns structured intelligence. MariaDB holds this presentation cache. Parent DRAGONHYDRA remains read-only.</footer>
 <script type="application/json" id="data"><?=json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_INVALID_UTF8_SUBSTITUTE)?></script>
+<script type="application/json" id="cognitive-data"><?=json_encode($cognitive, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_INVALID_UTF8_SUBSTITUTE)?></script>
 <script>
 const data=JSON.parse(document.getElementById('data').textContent), a=data.analysis||{};
+const cognitive=JSON.parse(document.getElementById('cognitive-data').textContent);
 function text(node,value){node.textContent=value===null?'UNKNOWN':String(value);}
 function view(id,value){const host=document.getElementById(id);if(value===undefined||value===null){host.textContent='INSUFFICIENT_EVIDENCE';return;}if(Array.isArray(value)&&value.length&&value.every(x=>typeof x==='object'&&x!==null)){const keys=[...new Set(value.flatMap(x=>Object.keys(x)))].filter(k=>!['input_evidence','calibration','feature_snapshot','score_matrix'].includes(k));const table=document.createElement('table'),head=document.createElement('tr');for(const k of keys){const th=document.createElement('th');text(th,k.replaceAll('_',' '));head.append(th);}table.append(head);for(const row of value){const tr=document.createElement('tr');for(const k of keys){const td=document.createElement('td');text(td,typeof row[k]==='object'?JSON.stringify(row[k]):row[k]??'—');tr.append(td);}table.append(tr);}host.append(table);}else{const pre=document.createElement('pre');text(pre,JSON.stringify(value,null,2));host.append(pre);}}
 view('evidence-view',a.evidence||data.latest_snapshot);view('source-view',a.sources);view('identity-view',a.entity_registry);view('weather-view',a.weather);view('feature-view',a.features);view('model-view',a.models);view('tribunal-view',a.tribunal);view('simulation-view',a.simulation);view('market-view',a.market);view('uncertainty-view',a.uncertainty);view('explanation-view',a.explanation);view('research-view',a.research);view('head-view',a.heads);view('history-view',a.historical_evaluation?.model_results);view('quality-view',{calibration:a.historical_evaluation?.calibration_summary,gpu:a.gpu});view('health-view',{sqlserver:data.sqlserver,mariadb:data.mariadb,built_at:data.built_at,scheduler:a.scheduler,prospective_prediction:a.prospective_prediction});view('limits-view',a.chain_breaks);text(document.getElementById('raw-view'),JSON.stringify(data,null,2));
 const probs=a.ensemble?.probabilities||a.ensemble;
+view('cognitive-view',cognitive.cognitive);view('machine-awareness-view',cognitive.machine);view('world-awareness-view',cognitive.world);view('cognitive-deltas-view',cognitive.deltas);view('cognitive-memory-view',cognitive.memory);view('cognitive-security-view',cognitive.security);view('cognitive-metrics-view',cognitive.metrics);
 if(probs&&typeof probs==='object'){for(const [i,k] of ['HOME','DRAW','AWAY'].entries()){let value=Array.isArray(probs)?probs[i]:probs[k]??probs[k.toLowerCase()];if(typeof value!=='number')continue;const row=document.createElement('div');row.className='bar';const label=document.createElement('span');text(label,k+' '+(value*100).toFixed(1)+'%');const bar=document.createElement('meter');bar.min=0;bar.max=1;bar.value=value;bar.setAttribute('aria-label',k+' probability');row.append(label,bar);document.getElementById('probability-bars').append(row);}}
 </script></body></html>

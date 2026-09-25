@@ -7,3 +7,5 @@ The inherited baseline includes temporal modes, entity contracts, empirical eval
 External source blocks, unobserved future outcomes and unsupported scientific claims remain explicit. A working contract is useful partial progress; it cannot close a live success gate by itself.
 
 The [LocalAI recovery audit](docs/LOCALAI_RECOVERY_AUDIT.md) records preserved-runtime Qwen inference, bounded CHILD integration, security boundaries and remaining limitations. [Operations](docs/LOCALAI_DRAGONHYDRA_INTEGRATION.md) describe explicit start/stop and replay; no old privileged service or automatic research/action loop is enabled.
+
+The [cognitive awareness V2 foundation](docs/COGNITIVE_AWARENESS_V2.md) adds bounded ARX machine observation, explicit memory, dual-model routing and independent Codex reconciliation. [Validation progress](docs/COGNITIVE_V2_PROGRESS.md) distinguishes implemented contracts, live checks and unresolved scientific gates. Runtime cognition proposes actions only.

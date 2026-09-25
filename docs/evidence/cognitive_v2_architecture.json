@@ -1,0 +1,226 @@
+{
+  "schema_version": "2",
+  "created_at": "2026-09-25T22:12:53.095320+00:00",
+  "components": {
+    "HYDRA": "OBSERVE_WORLD",
+    "MEDUSA": "VALIDATE_EVIDENCE",
+    "ARX": "OBSERVE_MACHINE",
+    "MEMORY": "PRESERVE_HISTORY",
+    "MATH": "CALCULATE",
+    "QWEN_4B": "FAST_INTERPRETATION",
+    "QWEN_30B": "DEEP_INTERPRETATION",
+    "CODEX": "INDEPENDENT_ARTIFACT_REVIEW",
+    "RECONCILIATION": "COMPARE_POSITIONS",
+    "POLICY": "BOUND_PROPOSALS",
+    "COCKPIT": "READ_ONLY"
+  },
+  "edges": [
+    [
+      "HYDRA",
+      "MEDUSA"
+    ],
+    [
+      "MEDUSA",
+      "STATE"
+    ],
+    [
+      "ARX",
+      "STATE"
+    ],
+    [
+      "MEMORY",
+      "STATE"
+    ],
+    [
+      "MATH",
+      "STATE"
+    ],
+    [
+      "STATE",
+      "QWEN_4B"
+    ],
+    [
+      "STATE",
+      "QWEN_30B"
+    ],
+    [
+      "STATE",
+      "CODEX"
+    ],
+    [
+      "QWEN_4B",
+      "RECONCILIATION"
+    ],
+    [
+      "QWEN_30B",
+      "RECONCILIATION"
+    ],
+    [
+      "CODEX",
+      "RECONCILIATION"
+    ],
+    [
+      "RECONCILIATION",
+      "RESEARCH_NEED"
+    ],
+    [
+      "RESEARCH_NEED",
+      "POLICY"
+    ],
+    [
+      "POLICY",
+      "BOUNDED_PROPOSAL"
+    ],
+    [
+      "STATE",
+      "COCKPIT"
+    ]
+  ],
+  "runtime_machine_actions": "DISABLED",
+  "automatic_acquisition": "NOT_ENABLED",
+  "self_model": {
+    "schema_version": "2",
+    "version": "cognitive-v2/1",
+    "created_at": "2026-09-25T22:05:26.234361Z",
+    "components": [
+      {
+        "schema_version": "2",
+        "component_id": "ARX",
+        "status": "OBSERVE_ONLY",
+        "metrics": [],
+        "labels": [],
+        "references": [],
+        "reason_codes": []
+      },
+      {
+        "schema_version": "2",
+        "component_id": "COGNITIVE_CORE",
+        "status": "ANALYSIS_ONLY",
+        "metrics": [],
+        "labels": [],
+        "references": [],
+        "reason_codes": []
+      },
+      {
+        "schema_version": "2",
+        "component_id": "HYDRA",
+        "status": "EXISTING_ACQUISITION_PATH",
+        "metrics": [],
+        "labels": [],
+        "references": [],
+        "reason_codes": []
+      },
+      {
+        "schema_version": "2",
+        "component_id": "MEDUSA",
+        "status": "VALIDATION_REQUIRED",
+        "metrics": [],
+        "labels": [],
+        "references": [],
+        "reason_codes": []
+      }
+    ],
+    "available_models": [
+      "qwen3-4b",
+      "qwen3-coder-30b"
+    ],
+    "active_model": "qwen3-4b",
+    "available_data_sources": [
+      "openfootball"
+    ],
+    "active_hydra_heads": [
+      "MATCH"
+    ],
+    "active_math_engines": [
+      "DIXON_COLES",
+      "ELO",
+      "KNN",
+      "LEAGUE_EMPIRICAL",
+      "POISSON",
+      "POISSON_GLM",
+      "VENUE_EMPIRICAL"
+    ],
+    "known_databases": [
+      "CHILD_SQL_SERVER",
+      "CHILD_MARIADB"
+    ],
+    "available_actions": [
+      "ANALYZE_STATE",
+      "COMPARE_MODELS",
+      "NO_ACTION",
+      "RECONCILE",
+      "REQUEST_CALCULATION",
+      "REQUEST_HUMAN_REVIEW",
+      "REQUEST_HYDRA_RESEARCH",
+      "REQUEST_MEMORY_LOOKUP",
+      "REQUEST_MODEL_COMPARISON",
+      "REQUEST_STATE_REFRESH",
+      "ANALYZE_STATE",
+      "COMPARE_MODELS",
+      "NO_ACTION",
+      "RECONCILE",
+      "REQUEST_CALCULATION",
+      "REQUEST_HUMAN_REVIEW",
+      "REQUEST_HYDRA_RESEARCH",
+      "REQUEST_MEMORY_LOOKUP",
+      "REQUEST_MODEL_COMPARISON",
+      "REQUEST_STATE_REFRESH",
+      "ANALYZE_STATE",
+      "COMPARE_MODELS",
+      "NO_ACTION",
+      "RECONCILE",
+      "REQUEST_CALCULATION",
+      "REQUEST_HUMAN_REVIEW",
+      "REQUEST_HYDRA_RESEARCH",
+      "REQUEST_MEMORY_LOOKUP",
+      "REQUEST_MODEL_COMPARISON",
+      "REQUEST_STATE_REFRESH"
+    ],
+    "disabled_actions": [
+      "ALTER_FIREWALL",
+      "CHANGE_SERVICE",
+      "DELETE_FILE",
+      "EDIT_REGISTRY",
+      "INSTALL_SOFTWARE",
+      "KILL_PROCESS",
+      "PRIVILEGED_SQL",
+      "RUN_ARBITRARY_COMMAND",
+      "ALTER_FIREWALL",
+      "CHANGE_SERVICE",
+      "DELETE_FILE",
+      "EDIT_REGISTRY",
+      "INSTALL_SOFTWARE",
+      "KILL_PROCESS",
+      "PRIVILEGED_SQL",
+      "RUN_ARBITRARY_COMMAND",
+      "ALTER_FIREWALL",
+      "CHANGE_SERVICE",
+      "DELETE_FILE",
+      "EDIT_REGISTRY",
+      "INSTALL_SOFTWARE",
+      "KILL_PROCESS",
+      "PRIVILEGED_SQL",
+      "RUN_ARBITRARY_COMMAND"
+    ],
+    "machine_capabilities": [
+      "READ_ONLY_LEVEL_0",
+      "READ_ONLY_LEVEL_1",
+      "READ_ONLY_LEVEL_2"
+    ],
+    "known_blockers": [
+      "REAL_ODDS_UNAVAILABLE",
+      "PROSPECTIVE_OUTCOME_UNOBSERVED",
+      "KICKOFF_TIMEZONE_UNVERIFIED",
+      "PLAYER_IDENTITY_INCOMPLETE",
+      "RESEARCH_BENEFIT_UNMEASURED",
+      "QWEN_4B_PUBLISHER_PROVENANCE_UNVERIFIED"
+    ],
+    "known_scientific_limits": [
+      "NO_PREDICTIVE_ACCURACY_GAIN_ESTABLISHED",
+      "FUTURE_IS_NOT_OBSERVATION"
+    ],
+    "current_feature_branch": "feature/cognitive-machine-awareness-v2",
+    "last_validated_state_hash": "60e913dd9f22054d95b7779ec24db92056296254643fb74208dc78e4b7956fb4",
+    "last_reconciliation_at": null
+  }
+}

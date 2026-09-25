@@ -38,6 +38,23 @@ class AnalysisEngine:
         self.metrics={'request_count':0,'success_count':0,'failure_count':0,
                       'last_success_at':None,'last_latency_ms':None,'last_failure':None}
 
+    def analyze_v2(self, request):
+        """V2 shares authentication, the pinned runtime and the session quota."""
+        from dragonhydra.cognitive_v2.adapter import QwenCognitiveEngine
+        if not hasattr(self, '_cognitive_v2'):
+            self._cognitive_v2=QwenCognitiveEngine(self.runtime,self.workdir,
+                timeout_seconds=self.timeout_seconds)
+        result=self._cognitive_v2.analyze_request(request)
+        self.metrics['request_count']+=1
+        self.metrics['last_latency_ms']=result.latency_ms
+        if result.result_status=='COMPLETE':
+            self.metrics['success_count']+=1
+            self.metrics['last_success_at']=result.created_at
+        else:
+            self.metrics['failure_count']+=1
+            self.metrics['last_failure']=result.failure_state
+        return result
+
     def model(self):
         return {'schema_version':SCHEMA_VERSION, **{k:self.runtime.identity[k] for k in ('model_id','model_hash','runtime_id')}}
 
@@ -170,7 +187,7 @@ class AnalysisHandler(BaseHTTPRequestHandler):
         self._reply(200,value)
     def do_POST(self):
         if not self._authorize(): return
-        if self.path!='/analyze':
+        if self.path not in ('/analyze','/v2/analyze'):
             self._reply(404,{'failure_state':'UNSUPPORTED_ROUTE'}); return
         try:
             if (self.headers.get_all('Content-Type')!=['application/json']
@@ -181,10 +198,15 @@ class AnalysisHandler(BaseHTTPRequestHandler):
             if not 0<length<=MAX_REQUEST_BYTES: raise ContractError('REQUEST_TOO_LARGE')
             raw=self.rfile.read(length)
             if len(raw)!=length: raise ContractError('INVALID_REQUEST')
-            request=AnalysisRequest.from_dict(strict_json(raw,max_bytes=MAX_REQUEST_BYTES))
-            result=self.server.engine.analyze(request)
+            if self.path=='/v2/analyze':
+                from dragonhydra.cognitive_v2.adapter import CognitiveAnalysisRequest
+                request=CognitiveAnalysisRequest.from_dict(strict_json(raw,max_bytes=MAX_REQUEST_BYTES))
+                result=self.server.engine.analyze_v2(request)
+            else:
+                request=AnalysisRequest.from_dict(strict_json(raw,max_bytes=MAX_REQUEST_BYTES))
+                result=self.server.engine.analyze(request)
             self.server.engine.publish_status()
             self._reply(200,result.to_dict())
         except (ContractError,ValueError,TypeError,KeyError,TimeoutError) as exc:
-            reason=exc.reason_code if isinstance(exc,ContractError) else 'INVALID_REQUEST'
+            reason=getattr(exc,'reason_code','INVALID_REQUEST')
             self._reply(413 if reason=='REQUEST_TOO_LARGE' else 400,{'failure_state':reason})

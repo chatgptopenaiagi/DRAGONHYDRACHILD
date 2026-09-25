@@ -15,6 +15,17 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTABLE_CLASSES = {
+    "test_cognitive_v2_artifacts.CognitiveArtifactTests",
+    "test_cognitive_v2_core.CognitiveV2CoreTests",
+    "test_cognitive_v2_cycle.CognitiveV2CycleTests",
+    "test_cognitive_v2_runtime.CognitiveV2RouterTests",
+    "test_cognitive_v2_runtime.CognitiveV2AdapterTests",
+    "test_cognitive_v2_runtime.CognitiveV2HTTPTests",
+    "test_cognitive_v2_runtime.CognitiveV2ClientTests",
+    "test_machine_v2.MachineV2ContractTests",
+    "test_machine_v2.MachineV2DeltaTests",
+    "test_machine_v2.MachineV2ProbeTests",
+    "test_machine_v2.MachineV2JournalTests",
     "test_localai_contracts.LocalAIContractTests",
     "test_localai_contracts.LocalAIClientTests",
     "test_localai_gateway.LocalAIGatewayTests",

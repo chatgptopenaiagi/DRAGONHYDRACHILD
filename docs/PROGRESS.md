@@ -253,3 +253,7 @@ None for dual database coexistence and bounded Python access. Residual limitatio
 ## NEXT_EXACT_ACTION
 
 Design and implement one small typed storage-router experiment: route an operational-state read to a separately owned MariaDB lab dataset and a structured-workload summary to the existing SQL Server lab. Give each operation an explicit owner and return typed results. Do not copy datasets automatically, replicate databases or introduce production sports data. This next experiment is proposed only; the current dual diagnostic calls both bounded adapters directly.
+
+## CHILD continuation — 2026-09-26 cognitive V2
+
+The preceding sections retain inherited historical context. Current CHILD continuation is recorded in [Cognitive V2 progress](COGNITIVE_V2_PROGRESS.md): bounded world/machine state, ARX deltas, explicit memory, dual-Qwen routing, Codex artifacts, reconciliation and a read-only cockpit. Runtime action authority remains disabled. The next CHILD action is a fresh explicit cognitive capture and evidence-backed HYDRA research proposal; unresolved prospective/scientific gates remain unchanged.

@@ -26,3 +26,17 @@ See the [final report](FINAL_DRAGONHYDRACHILD_REPORT.md) and [component removal/
 | Restricted model process; trusted engineering supervisor | Ordinary child processes inherited an administrative token. | Medium integrity, admin deny-only, job no-children/kill-on-close; ordinary user filesystem/network access remains an OS limitation. | COMPLETE |
 | Preserve concurrent external recovery work | An unowned Ollama Modelfile/process appeared after inventory. | No overwrite/termination; originals unchanged, exact whole-tree equality false, actor attribution UNKNOWN. | PARTIAL |
 | Keep scientific gates and original forecast unchanged | Inference availability is not predictive validity or external evidence. | Same frozen input replayed through no-AI,4B,30B; no outcome/accuracy-gain claim. | COMPLETE |
+
+## 2026-09-26 — Cognitive and machine awareness V2
+
+| Decision | Reason and evidence | Status |
+| --- | --- | --- |
+| Recognize manual Ollama/llama as owner-authorized | Owner explicitly attributed the earlier parallel recovery; historical UNKNOWN audit is preserved, current attribution is known. The V2 inventory includes those assets and their processes remain intact. | COMPLETE |
+| Separate ARX observations from cognitive interpretation | Fixed read-only probes and a successful owned-process A/B/C experiment; typed non-evidence AI results cannot insert observations. | COMPLETE |
+| Explicit artifact cognition with no action executor | Same-state Qwen/Codex products and reconciliation preserve disagreement. Capability registry disables all machine mutations. | COMPLETE |
+| Dual-model routing uses task/resources, not size preference | 4B fast reflex, 30B deeper analysis; deterministic advisory selection never launches a process automatically. Both models completed a frozen comparison. | COMPLETE |
+| Preserve prior components and forecasts | No parent cherry-pick, historical service restart or deletion. LocalAI metadata and critical hashes, parent authored files and original forecast match their starting state. | COMPLETE |
+| Learning requires later observation | Five-layer memory includes a retrospective ARX protocol comparison; no sports outcome or accuracy gain is fabricated. | COMPLETE |
+| Keep on-demand operation and bounded storage | No new daemon/task; clocks expose stale state, capacity stops writes rather than deleting evidence. Clean-machine reproduction and sustained load remain unproven. | PARTIAL |
+
+See [V2 architecture](COGNITIVE_AWARENESS_V2.md), [security](COGNITIVE_SECURITY_MODEL.md), [harvest decisions](LOCALAI_GENETIC_HARVEST.md) and [measured validation](COGNITIVE_V2_PROGRESS.md).

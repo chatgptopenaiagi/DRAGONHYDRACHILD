@@ -1,0 +1,923 @@
+{
+  "schema_version": "2",
+  "capabilities": [
+    {
+      "schema_version": "2",
+      "capability_id": "alter_firewall",
+      "actor": "CODEX",
+      "action_class": "ALTER_FIREWALL",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "analyze_state",
+      "actor": "CODEX",
+      "action_class": "ANALYZE_STATE",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "change_service",
+      "actor": "CODEX",
+      "action_class": "CHANGE_SERVICE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "compare_models",
+      "actor": "CODEX",
+      "action_class": "COMPARE_MODELS",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "delete_file",
+      "actor": "CODEX",
+      "action_class": "DELETE_FILE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "edit_registry",
+      "actor": "CODEX",
+      "action_class": "EDIT_REGISTRY",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "install_software",
+      "actor": "CODEX",
+      "action_class": "INSTALL_SOFTWARE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "kill_process",
+      "actor": "CODEX",
+      "action_class": "KILL_PROCESS",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "no_action",
+      "actor": "CODEX",
+      "action_class": "NO_ACTION",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "privileged_sql",
+      "actor": "CODEX",
+      "action_class": "PRIVILEGED_SQL",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "reconcile",
+      "actor": "CODEX",
+      "action_class": "RECONCILE",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "request_calculation",
+      "actor": "CODEX",
+      "action_class": "REQUEST_CALCULATION",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "request_human_review",
+      "actor": "CODEX",
+      "action_class": "REQUEST_HUMAN_REVIEW",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "request_hydra_research",
+      "actor": "CODEX",
+      "action_class": "REQUEST_HYDRA_RESEARCH",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": true,
+      "requires_hydra": true,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "request_memory_lookup",
+      "actor": "CODEX",
+      "action_class": "REQUEST_MEMORY_LOOKUP",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "request_model_comparison",
+      "actor": "CODEX",
+      "action_class": "REQUEST_MODEL_COMPARISON",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "request_state_refresh",
+      "actor": "CODEX",
+      "action_class": "REQUEST_STATE_REFRESH",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "run_arbitrary_command",
+      "actor": "CODEX",
+      "action_class": "RUN_ARBITRARY_COMMAND",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.alter_firewall",
+      "actor": "QWEN_4B",
+      "action_class": "ALTER_FIREWALL",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.analyze_state",
+      "actor": "QWEN_4B",
+      "action_class": "ANALYZE_STATE",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.change_service",
+      "actor": "QWEN_4B",
+      "action_class": "CHANGE_SERVICE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.compare_models",
+      "actor": "QWEN_4B",
+      "action_class": "COMPARE_MODELS",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.delete_file",
+      "actor": "QWEN_4B",
+      "action_class": "DELETE_FILE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.edit_registry",
+      "actor": "QWEN_4B",
+      "action_class": "EDIT_REGISTRY",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.install_software",
+      "actor": "QWEN_4B",
+      "action_class": "INSTALL_SOFTWARE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.kill_process",
+      "actor": "QWEN_4B",
+      "action_class": "KILL_PROCESS",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.no_action",
+      "actor": "QWEN_4B",
+      "action_class": "NO_ACTION",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.privileged_sql",
+      "actor": "QWEN_4B",
+      "action_class": "PRIVILEGED_SQL",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.reconcile",
+      "actor": "QWEN_4B",
+      "action_class": "RECONCILE",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.request_calculation",
+      "actor": "QWEN_4B",
+      "action_class": "REQUEST_CALCULATION",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.request_human_review",
+      "actor": "QWEN_4B",
+      "action_class": "REQUEST_HUMAN_REVIEW",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.request_hydra_research",
+      "actor": "QWEN_4B",
+      "action_class": "REQUEST_HYDRA_RESEARCH",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": true,
+      "requires_hydra": true,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.request_memory_lookup",
+      "actor": "QWEN_4B",
+      "action_class": "REQUEST_MEMORY_LOOKUP",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.request_model_comparison",
+      "actor": "QWEN_4B",
+      "action_class": "REQUEST_MODEL_COMPARISON",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.request_state_refresh",
+      "actor": "QWEN_4B",
+      "action_class": "REQUEST_STATE_REFRESH",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_4b.run_arbitrary_command",
+      "actor": "QWEN_4B",
+      "action_class": "RUN_ARBITRARY_COMMAND",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.alter_firewall",
+      "actor": "QWEN_30B",
+      "action_class": "ALTER_FIREWALL",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.analyze_state",
+      "actor": "QWEN_30B",
+      "action_class": "ANALYZE_STATE",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.change_service",
+      "actor": "QWEN_30B",
+      "action_class": "CHANGE_SERVICE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.compare_models",
+      "actor": "QWEN_30B",
+      "action_class": "COMPARE_MODELS",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.delete_file",
+      "actor": "QWEN_30B",
+      "action_class": "DELETE_FILE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.edit_registry",
+      "actor": "QWEN_30B",
+      "action_class": "EDIT_REGISTRY",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.install_software",
+      "actor": "QWEN_30B",
+      "action_class": "INSTALL_SOFTWARE",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.kill_process",
+      "actor": "QWEN_30B",
+      "action_class": "KILL_PROCESS",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.no_action",
+      "actor": "QWEN_30B",
+      "action_class": "NO_ACTION",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.privileged_sql",
+      "actor": "QWEN_30B",
+      "action_class": "PRIVILEGED_SQL",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.reconcile",
+      "actor": "QWEN_30B",
+      "action_class": "RECONCILE",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "BOUNDED_ANALYSIS"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.request_calculation",
+      "actor": "QWEN_30B",
+      "action_class": "REQUEST_CALCULATION",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.request_human_review",
+      "actor": "QWEN_30B",
+      "action_class": "REQUEST_HUMAN_REVIEW",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.request_hydra_research",
+      "actor": "QWEN_30B",
+      "action_class": "REQUEST_HYDRA_RESEARCH",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": true,
+      "requires_hydra": true,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.request_memory_lookup",
+      "actor": "QWEN_30B",
+      "action_class": "REQUEST_MEMORY_LOOKUP",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.request_model_comparison",
+      "actor": "QWEN_30B",
+      "action_class": "REQUEST_MODEL_COMPARISON",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.request_state_refresh",
+      "actor": "QWEN_30B",
+      "action_class": "REQUEST_STATE_REFRESH",
+      "enabled": true,
+      "risk_class": "LOW",
+      "requires_fresh_state": true,
+      "requires_human": false,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "PROPOSAL_ONLY"
+      ]
+    },
+    {
+      "schema_version": "2",
+      "capability_id": "qwen_30b.run_arbitrary_command",
+      "actor": "QWEN_30B",
+      "action_class": "RUN_ARBITRARY_COMMAND",
+      "enabled": false,
+      "risk_class": "HIGH",
+      "requires_fresh_state": true,
+      "requires_human": true,
+      "requires_medusa": false,
+      "requires_hydra": false,
+      "reversible": true,
+      "max_frequency": 1,
+      "reason_codes": [
+        "DISABLED_MACHINE_MUTATION"
+      ]
+    }
+  ]
+}
