@@ -1,0 +1,135 @@
+{
+  "schema_name": "dragonhydra.continuity.experiments",
+  "schema_version": "1",
+  "created_at": "2026-09-25T22:34:00Z",
+  "project_id": "DRAGONHYDRACHILD",
+  "capture_id": null,
+  "experiments": [
+    {
+      "experiment_id": "LOCALAI_RECOVERY_REPLAY",
+      "purpose": "Verify bounded local response path and fail-closed boundaries",
+      "timestamp": "2026-09-25T21:18:43.834651Z",
+      "status": "VALIDATED",
+      "model_tool": [
+        "NO_AI_BASELINE",
+        "QWEN_4B",
+        "QWEN_30B"
+      ],
+      "passed_checks": 19,
+      "total_checks": 19,
+      "input_ref": "docs/evidence/localai_replay_input.json",
+      "evidence_refs": [
+        "docs/evidence/localai_replay_summary.json",
+        "docs/LOCALAI_RECOVERY_AUDIT.md"
+      ],
+      "limitations": [
+        "NO_PREDICTIVE_ACCURACY_CLAIM",
+        "NOT_A_FULL_HOST_SANDBOX"
+      ]
+    },
+    {
+      "experiment_id": "V2_ARX_PROCESS_AB_C",
+      "purpose": "Observe controlled owned-process appearance and disappearance",
+      "timestamp": null,
+      "timestamp_status": "EXACT_CLOCK_IN_LOCAL_RECEIPT",
+      "status": "OBSERVED",
+      "model_tool": [
+        "ARX",
+        "OWNED_SAFE_PYTHON_PROCESS"
+      ],
+      "passed_checks": 8,
+      "total_checks": 8,
+      "evidence_refs": [
+        "docs/evidence/cognitive_v2_validation.json",
+        "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/arx-experiment.json"
+      ],
+      "limitations": [
+        "CONTROLLED_NARROW_MACHINE_OPERATION"
+      ]
+    },
+    {
+      "experiment_id": "V2_ARX_DELTA_QWEN",
+      "purpose": "Interpret only structured machine delta against deterministic observations",
+      "timestamp": null,
+      "timestamp_status": "EXACT_CLOCK_IN_LOCAL_RECEIPT",
+      "status": "VALIDATED",
+      "model_tool": [
+        "QWEN_4B"
+      ],
+      "passed_checks": 4,
+      "total_checks": 4,
+      "evidence_refs": [
+        "docs/evidence/cognitive_v2_validation.json"
+      ],
+      "limitations": [
+        "NO_GENERAL_CLAIM_TRUTH_OR_PREDICTION_ACCURACY_PROOF"
+      ]
+    },
+    {
+      "experiment_id": "V2_FROZEN_COMPARISON",
+      "purpose": "Compare independent actors on frozen cognitive state without declaring a winner",
+      "timestamp": "2026-09-25T22:11:18.505610+00:00",
+      "status": "EXPERIMENTAL",
+      "model_tool": [
+        "SYSTEM",
+        "QWEN_4B",
+        "QWEN_30B",
+        "CODEX"
+      ],
+      "state_hash": "60e913dd9f22054d95b7779ec24db92056296254643fb74208dc78e4b7956fb4",
+      "snapshot_ref": "23de9359eb0948d4ba813e2cacb1b95c5cb7205b6424dffbaff295cc9d78efb8",
+      "projection_hash": "7bbec6e4b974b797346dff1cb07aaf6fef2b07e1642f222a6a2dd77254cc12f1",
+      "latency_ms": {
+        "QWEN_4B": 25091.213,
+        "QWEN_30B": 75148.523,
+        "CODEX": null
+      },
+      "reconciliation_statuses": [
+        "DISAGREEMENT",
+        "INSUFFICIENT_EVIDENCE",
+        "DISAGREEMENT"
+      ],
+      "evidence_refs": [
+        "docs/evidence/cognitive_v2_validation.json"
+      ],
+      "limitations": [
+        "CODEX_FULL_STATE_QWEN_BOUNDED_PROJECTION",
+        "REFERENCE_EXISTENCE_NOT_TRUTH",
+        "LATENCY_NOT_COMPARABLE_TO_INTERACTIVE_CODEX",
+        "NO_UNIVERSAL_WINNER",
+        "NO_PREDICTIVE_ACCURACY_MEASUREMENT"
+      ]
+    },
+    {
+      "experiment_id": "V2_AUTHENTICATED_CYCLE",
+      "purpose": "Create immutable receipt through authenticated V2 HTTP path",
+      "timestamp": null,
+      "timestamp_status": "EXACT_CLOCK_IN_LOCAL_RECEIPT",
+      "status": "PARTIAL",
+      "receipt_ref": "feb022ac9e2de2d6e09f966846e566ce47c54de0834c45cbcd3cf33183fe97fd",
+      "evidence_refs": [
+        "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/final-handoff.json",
+        "docs/COGNITIVE_V2_PROGRESS.md"
+      ],
+      "limitations": [
+        "CODEX_HANDOFF_PENDING_FOR_THIS_FRESH_STATE"
+      ]
+    },
+    {
+      "experiment_id": "V2_LIVE_BOUNDARIES",
+      "purpose": "Negative authentication, origin, host, schema, size and control-route checks",
+      "timestamp": null,
+      "timestamp_status": "EXACT_CLOCK_IN_LOCAL_RECEIPT",
+      "status": "VALIDATED",
+      "passed_checks": 12,
+      "total_checks": 12,
+      "evidence_refs": [
+        "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/live-boundaries.json",
+        "docs/COGNITIVE_V2_PROGRESS.md"
+      ],
+      "limitations": [
+        "CONCURRENT_HEALTH_TIMEOUT_RETAINED_SEPARATELY"
+      ]
+    }
+  ]
+}

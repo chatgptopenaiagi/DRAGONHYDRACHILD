@@ -1,0 +1,268 @@
+{
+  "schema_name": "dragonhydra.continuity.important-artifacts",
+  "schema_version": "1",
+  "created_at": "2026-09-25T22:34:00Z",
+  "project_id": "DRAGONHYDRACHILD",
+  "capture_id": null,
+  "scope": "SELECTED_IMPORTANT_ARTIFACTS_ONLY",
+  "entries": [
+    {
+      "path": "AGENTS.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "CHILD working boundary and canonical interpreter policy",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/CHILD_MISSION.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Owner-authorized CHILD mission",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/DRAGONHYDRA_MASTER_ROADMAP.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Architectural laws and long-term gates",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "docs/CHILD_DECISIONS.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Dated accepted decisions and reasons",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/COGNITIVE_AWARENESS_V2.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Current bounded cognition architecture",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/COGNITIVE_SECURITY_MODEL.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Implemented boundaries and explicit OS limitations",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/LOCALAI_GENETIC_HARVEST.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Historical component reuse/adapt/defer evidence",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "docs/continuity/NEXT_ACTION.md",
+      "category": "AUTHORITATIVE",
+      "classification": "DOCUMENTATION",
+      "purpose": "Current conservative continuation contract",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/evidence/cognitive_v2_validation.json",
+      "category": "EVIDENCE",
+      "classification": "EVIDENCE",
+      "purpose": "Sanitized frozen comparison and ARX measurements",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "docs/evidence/cognitive_v2_capabilities.json",
+      "category": "DERIVED",
+      "classification": "CONFIGURATION",
+      "purpose": "Reviewed capability registry projection",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "docs/evidence/cognitive_v2_architecture.json",
+      "category": "DERIVED",
+      "classification": "DOCUMENTATION",
+      "purpose": "Machine-readable architectural map",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "docs/evidence/localai_replay_summary.json",
+      "category": "EVIDENCE",
+      "classification": "EVIDENCE",
+      "purpose": "Earlier bounded recovery replay",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "config/localai_runtime_manifest.json",
+      "category": "AUTHORITATIVE",
+      "classification": "CONFIGURATION",
+      "purpose": "Pinned 54 runtime binary identities",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "src/dragonhydra/cognitive_v2/contracts.py",
+      "category": "AUTHORITATIVE",
+      "classification": "SOURCE",
+      "purpose": "Cognitive typed contracts",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "src/dragonhydra/cognitive_v2/policy.py",
+      "category": "AUTHORITATIVE",
+      "classification": "SOURCE",
+      "purpose": "Capability and action-proposal denial logic",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "src/dragonhydra/cognitive_v2/router.py",
+      "category": "AUTHORITATIVE",
+      "classification": "SOURCE",
+      "purpose": "Deterministic advisory Qwen routing",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "src/dragonhydra/machine/probes.py",
+      "category": "AUTHORITATIVE",
+      "classification": "SOURCE",
+      "purpose": "Fixed bounded read-only observation",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "src/dragonhydra/localai/runtime.py",
+      "category": "AUTHORITATIVE",
+      "classification": "SOURCE",
+      "purpose": "Explicit verified launcher; never invoked by continuity",
+      "safe_to_commit": true,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/final-handoff.json",
+      "category": "PRIVATE_LOCAL",
+      "classification": "CHECKPOINT",
+      "purpose": "Exact V2 commit, tests, runtime and preservation handoff",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/full-tests-release.log",
+      "category": "PRIVATE_LOCAL",
+      "classification": "EVIDENCE",
+      "purpose": "Full 694-test log; reference only",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/preservation-after.json",
+      "category": "PRIVATE_LOCAL",
+      "classification": "EVIDENCE",
+      "purpose": "Parent, original forecast and LocalAI preservation",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "runtime/child/predictions/00000001.json",
+      "category": "PRIVATE_LOCAL",
+      "classification": "EVIDENCE",
+      "purpose": "Immutable original forecast; never altered",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    },
+    {
+      "path": "runtime/cognitive-v2/",
+      "category": "RUNTIME",
+      "classification": "RUNTIME",
+      "purpose": "Bounded content-addressed state, memory and receipts",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "runtime/localai/",
+      "category": "RUNTIME",
+      "classification": "RUNTIME",
+      "purpose": "Gateway state and protected operational files; credentials excluded",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 2
+    },
+    {
+      "path": "runtime/continuity/capsules/",
+      "category": "PRIVATE_LOCAL",
+      "classification": "CHECKPOINT",
+      "purpose": "Immutable small continuity capsules",
+      "safe_to_commit": false,
+      "owner": "DRAGONHYDRACHILD",
+      "reconstruction_priority": 1
+    }
+  ],
+  "external_assets": [
+    {
+      "location_class": "PRESERVED_LOCALAI_MODEL",
+      "model_id": "qwen3-4b",
+      "classification": "MODEL",
+      "safe_to_commit": false,
+      "size": 2497280256,
+      "known_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "hash_source": "docs/evidence/cognitive_v2_validation.json",
+      "hash_recomputed_by_continuity": false
+    },
+    {
+      "location_class": "PRESERVED_LOCALAI_MODEL",
+      "model_id": "qwen3-coder-30b",
+      "classification": "MODEL",
+      "safe_to_commit": false,
+      "size": 18556689568,
+      "known_sha256": "fadc3e5f8d42bf7e894a785b05082e47daee4df26680389817e2093056f088ad",
+      "hash_source": "docs/evidence/cognitive_v2_validation.json",
+      "hash_recomputed_by_continuity": false
+    }
+  ],
+  "secret_assets": {
+    "classification": "SECRET",
+    "safe_to_commit": false,
+    "content_policy": "NEVER_READ_OR_COPY",
+    "permitted_metadata": [
+      "credential_required",
+      "credential_present",
+      "credential_location_class"
+    ],
+    "credential_value": "OMITTED"
+  }
+}

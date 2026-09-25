@@ -1,0 +1,75 @@
+{
+  "schema_name": "dragonhydra.continuity.current-state",
+  "schema_version": "1",
+  "created_at": "2026-09-25T22:34:00Z",
+  "project_id": "DRAGONHYDRACHILD",
+  "capture_id": null,
+  "git_commit": "8cfde5e7ca903cf187f646b6d43a3af283965e86",
+  "git_tree": "e6162e925da5eb97dc76546750677862b7655f0f",
+  "branch": "feature/cognitive-machine-awareness-v2",
+  "preservation_branch": "feature/dual-continuity-preservation",
+  "repository": "chatgptopenaiagi/DRAGONHYDRACHILD",
+  "foundation_status": "COMPLETE",
+  "maturity": "PARTIAL_EXPERIMENTAL",
+  "observed_at": "2026-09-25T22:22:31.947279+00:00",
+  "observation_source": "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/final-handoff.json",
+  "completed": [
+    "TYPED_COGNITIVE_STATE",
+    "ARX_READ_ONLY_STATE_AND_DELTAS",
+    "BOUNDED_EVENT_JOURNAL",
+    "FIVE_LAYER_MEMORY",
+    "UNCERTAINTY_AND_SELF_MODEL",
+    "DUAL_QWEN_ROUTING",
+    "INDEPENDENT_CODEX_ARTIFACTS",
+    "DISAGREEMENT_PRESERVING_RECONCILIATION",
+    "HYPOTHESIS_RESEARCH_CONTRACTS",
+    "LATER_OBSERVATION_FEEDBACK",
+    "PROPOSAL_ONLY_POLICY",
+    "READ_ONLY_COCKPIT"
+  ],
+  "active_systems": [
+    "HYDRA_MEDUSA_CONTROLLED_EVIDENCE_PATH",
+    "ON_DEMAND_ARX",
+    "EXPLICIT_COGNITIVE_CYCLES",
+    "AUTHENTICATED_LOCALAI_GATEWAY",
+    "CHILD_READ_ONLY_XAMPP_COCKPIT"
+  ],
+  "last_observed_runtime": {
+    "status": "READY",
+    "model_id": "qwen3-4b",
+    "runtime_id": "llama-b10665-ca3d5a3e1",
+    "owned_loopback_ports": [
+      8082,
+      8083
+    ],
+    "owner_preserved_loopback_ports": [
+      11434,
+      11435
+    ],
+    "current_liveness": "REQUIRES_OBSERVATION"
+  },
+  "last_cycle_status": "PARTIAL_CODEX_HANDOFF_PENDING_FOR_THIS_FRESH_STATE",
+  "tests_ref": "docs/continuity/manifests/tests.json",
+  "limitations_ref": "docs/continuity/manifests/limitations.json",
+  "next_action": "Run python -B scripts/continuity.py compare against the latest verified local capsule and review the reported deltas before resuming the recorded HYDRA research need.",
+  "prior_research_next_action": "Capture fresh state and explicitly evaluate the recorded official-lineup research need through existing lawful HYDRA and MEDUSA paths; preserve original forecast.",
+  "preservation": {
+    "parent": "UNCHANGED_AT_V2_HANDOFF",
+    "historical_localai": "UNCHANGED_AT_V2_HANDOFF",
+    "original_forecast_sha256": "6b75463280f886a878265ace675de776f5657ec4325a37b96a2f443181fdd66e"
+  },
+  "security_status": "ANALYSIS_AND_PROPOSAL_ONLY_OS_SANDBOX_PARTIAL",
+  "deferred": [
+    "HISTORICAL_PRIVILEGED_SERVICES",
+    "ACTION_EXECUTORS",
+    "AUTONOMOUS_WORKERS",
+    "AUTOMATIC_MODEL_SWITCHING",
+    "NEURAL_RETRAINING",
+    "COMPONENT_REMOVAL"
+  ],
+  "evidence_refs": [
+    "docs/COGNITIVE_V2_PROGRESS.md",
+    "docs/evidence/cognitive_v2_validation.json",
+    "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/final-handoff.json"
+  ]
+}

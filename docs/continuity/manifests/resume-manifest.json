@@ -1,0 +1,60 @@
+{
+  "authoritative_files": [
+    "AGENTS.md",
+    "docs/continuity/NEXT_ACTION.md",
+    "docs/continuity/CURRENT_STATE.md",
+    "docs/continuity/RESUME_PROTOCOL.md",
+    "docs/COGNITIVE_AWARENESS_V2.md",
+    "docs/COGNITIVE_SECURITY_MODEL.md",
+    "docs/CHILD_DECISIONS.md",
+    "docs/COGNITIVE_V2_PROGRESS.md"
+  ],
+  "blockers_ref": "docs/continuity/manifests/limitations.json",
+  "branch": "feature/cognitive-machine-awareness-v2",
+  "capture_id": "20260925T234539136483Z_8cfde5e7_dc8041aa",
+  "created_at": "2026-09-25T22:34:00Z",
+  "current_checkpoint": "cognitive-awareness-v2-20260925T214532Z",
+  "do_not_repeat": [
+    "MODEL_INFERENCE_FOR_CONTEXT",
+    "MULTIGIGABYTE_MODEL_HASH_FOR_METADATA",
+    "FULL_SUITE_WITHOUT_RELEVANT_CODE_CHANGE",
+    "BROAD_FILESYSTEM_SCAN",
+    "OLD_PRIVILEGED_SERVICE_RESTART",
+    "RECOVERY_REINSTALL",
+    "ARX_EXPERIMENT_FOR_CONTEXT",
+    "PARENT_OR_FORECAST_MUTATION",
+    "BRANCH_MERGE"
+  ],
+  "expected_tests": [
+    "CONTINUITY_VERIFY",
+    "CONTINUITY_COMPARE",
+    "FOCUSED_TESTS_IF_PRESERVATION_CODE_CHANGES"
+  ],
+  "fallback_without_capsule": "Read portable indexes and existing public evidence; private runtime and current machine availability remain UNKNOWN. Do not reinstall or restore automatically.",
+  "git_commit": "8cfde5e7ca903cf187f646b6d43a3af283965e86",
+  "git_tree": "e6162e925da5eb97dc76546750677862b7655f0f",
+  "known_good_branch": "feature/cognitive-machine-awareness-v2",
+  "known_good_commit": "8cfde5e7ca903cf187f646b6d43a3af283965e86",
+  "last_completed_block": "ADVANCED_COGNITIVE_AND_MACHINE_AWARENESS_V2_FOUNDATION",
+  "local_capsule": {
+    "capsule_manifest_hash": "a0bee987d75ef192d7c13202b4baabd1cc5f6c4676247411053fb120cb05ed80",
+    "capture_id": "20260925T234539136483Z_8cfde5e7_dc8041aa",
+    "capture_timestamp": "2026-09-25T23:45:39.131943+00:00",
+    "captured_branch": "feature/dual-continuity-preservation",
+    "location_class": "IGNORED_PROJECT_RUNTIME",
+    "role": "PRE_PUBLICATION_IMMUTABLE_BASELINE"
+  },
+  "maturity": "PARTIAL_EXPERIMENTAL",
+  "next_action": "Run python -B scripts/continuity.py compare against the latest verified local capsule and review the reported deltas before resuming the recorded HYDRA research need.",
+  "prior_research_next_action": "Capture fresh state and explicitly evaluate the recorded official-lineup research need through existing lawful HYDRA and MEDUSA paths; preserve original forecast.",
+  "project_id": "DRAGONHYDRACHILD",
+  "schema_name": "dragonhydra.continuity.resume-manifest",
+  "schema_version": "1",
+  "stop_condition": "Stop after briefing and delta review unless additional work is explicitly authorized; preserve UNKNOWN or BLOCKED when evidence fails verification.",
+  "success_criteria": [
+    "CAPSULE_INTEGRITY_VERIFIED",
+    "MEANINGFUL_DELTAS_REVIEWED",
+    "MISSING_EVIDENCE_EXPLICIT",
+    "HISTORICAL_TESTS_BOUND_TO_COMMIT"
+  ]
+}

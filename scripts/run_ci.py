@@ -15,6 +15,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTABLE_CLASSES = {
+    "test_continuity.ContinuityTests",
     "test_cognitive_v2_artifacts.CognitiveArtifactTests",
     "test_cognitive_v2_core.CognitiveV2CoreTests",
     "test_cognitive_v2_cycle.CognitiveV2CycleTests",

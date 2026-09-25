@@ -1,0 +1,134 @@
+{
+  "schema_name": "dragonhydra.continuity.limitations",
+  "schema_version": "1",
+  "created_at": "2026-09-25T22:34:00Z",
+  "project_id": "DRAGONHYDRACHILD",
+  "capture_id": null,
+  "maturity": "PARTIAL_EXPERIMENTAL",
+  "limitations": [
+    {
+      "limitation_id": "LAWFUL_REAL_ODDS",
+      "status": "BLOCKED",
+      "summary": "No lawful real odds snapshot established.",
+      "evidence": "docs/CHILD_V0_V10_COMPLETION_MATRIX.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "ORIGINAL_PREDICTION_OUTCOME",
+      "status": "BLOCKED",
+      "summary": "No later observed outcome recorded at preserved handoff.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "TARGETED_RESEARCH_BENEFIT",
+      "status": "UNKNOWN",
+      "summary": "No measured real-world targeted-research or predictive accuracy gain.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "PLAYER_LINEUP_INJURY_COVERAGE",
+      "status": "PARTIAL",
+      "summary": "Incomplete player, lineup and injury evidence.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "KICKOFF_TIMEZONE",
+      "status": "UNKNOWN",
+      "summary": "Exact source kickoff timezone remains unverified.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "CROSS_PROVIDER_IDENTITY",
+      "status": "PARTIAL",
+      "summary": "Cross-provider identity evidence is incomplete.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "MULTIDAY_HISTORY",
+      "status": "PARTIAL",
+      "summary": "Insufficient sustained multi-day prospective history.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "CLEAN_MACHINE_REPRODUCTION",
+      "status": "PARTIAL",
+      "summary": "Independent complete machine stack reproduction unproved.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "QWEN4B_PUBLISHER_PROVENANCE",
+      "status": "UNKNOWN",
+      "summary": "Preserved model metadata differs from historical publisher label; no historical publisher hash.",
+      "evidence": "docs/LOCALAI_RECOVERY_AUDIT.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "ON_DEMAND_OBSERVATION",
+      "status": "PARTIAL",
+      "summary": "No continuous ARX/cognitive refresh or new unattended worker.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "SERIAL_GATEWAY_HEALTH",
+      "status": "PARTIAL",
+      "summary": "Concurrent health may wait during inference; one timeout then successful idle retry.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "BOUNDED_CONTEXT",
+      "status": "PARTIAL",
+      "summary": "Projection omissions and reference validity do not prove semantic truth.",
+      "evidence": "docs/COGNITIVE_SECURITY_MODEL.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "HOSTILE_HOST_ISOLATION",
+      "status": "PARTIAL",
+      "summary": "Restricted token/job is not a full OS filesystem/network sandbox.",
+      "evidence": "docs/COGNITIVE_SECURITY_MODEL.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "SUSTAINED_RESOURCE_LOAD",
+      "status": "UNKNOWN",
+      "summary": "Short live checks do not prove sustained contention stability.",
+      "evidence": "docs/COGNITIVE_V2_PROGRESS.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "PRIVATE_EVIDENCE_AVAILABILITY",
+      "status": "UNKNOWN",
+      "summary": "GitHub excludes models, raw checkpoints, runtime, credentials and databases.",
+      "evidence": "docs/continuity/SECURITY_BOUNDARY.md",
+      "closure_evidence": null
+    },
+    {
+      "limitation_id": "CAPSULE_FRESHNESS",
+      "status": "PARTIAL",
+      "summary": "Preserved observations require current comparison before action.",
+      "evidence": "docs/continuity/RESUME_PROTOCOL.md",
+      "closure_evidence": null
+    }
+  ],
+  "deferred": [
+    "HISTORICAL_PRIVILEGED_SERVICES",
+    "HISTORICAL_MCP_DEPLOYMENT",
+    "ACTION_EXECUTORS",
+    "AUTOMATIC_PRIVILEGED_RECOVERY",
+    "MACHINE_MUTATION",
+    "AUTONOMOUS_MODEL_SWITCHING",
+    "CONTINUOUS_COGNITIVE_DAEMON",
+    "NEURAL_RETRAINING",
+    "COMPONENT_REMOVAL"
+  ],
+  "deferred_evidence": "docs/LOCALAI_GENETIC_HARVEST.md"
+}

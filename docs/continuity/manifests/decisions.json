@@ -1,0 +1,180 @@
+{
+  "schema_name": "dragonhydra.continuity.decisions",
+  "schema_version": "1",
+  "created_at": "2026-09-25T22:34:00Z",
+  "project_id": "DRAGONHYDRACHILD",
+  "capture_id": null,
+  "identifier_policy": "CONTINUITY_INDEX_IDS_NOT_RETROACTIVE_ORIGINAL_IDS",
+  "records": [
+    {
+      "decision_id": "CHILD-ISOLATION",
+      "date": "2026-09-24",
+      "topic": "Project isolation",
+      "decision": "Independent CHILD history and resources; parent read-only.",
+      "reason": "Owner isolates experiment and prohibits parent modification.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "Parent branch modification prohibited"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "CHILD-EPISTEMIC",
+      "date": "2026-09-24",
+      "topic": "Evidence law",
+      "decision": "Preserve roadmap and epistemic states; override cadence only.",
+      "reason": "Owner authorizes full-roadmap attempt without falsifying gates.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "Normal cadence overridden"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "CHILD-FORECAST",
+      "date": "2026-09-24",
+      "topic": "Prediction immutability",
+      "decision": "Preserve original forecast; archive source/config for later calculations.",
+      "reason": "Hash alone cannot recreate uncommitted original source.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "Hash-only reconstruction insufficient"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "CHILD-ODDS",
+      "date": "2026-09-24",
+      "topic": "Market evidence",
+      "decision": "Keep real odds blocked.",
+      "reason": "Terms/auth boundaries override completion pressure.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "UNKNOWN"
+      ],
+      "status": "BLOCKED",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "RECOVERY-ANCESTOR",
+      "date": "2026-09-25",
+      "topic": "Historical LocalAI",
+      "decision": "Study surviving source/audits before runtime restoration.",
+      "reason": "Preserved filesystem survived; blind restart would revive unverified authority.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "Blind historical service restart"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "RECOVERY-BOUNDARY",
+      "date": "2026-09-25",
+      "topic": "Inference authority",
+      "decision": "Authenticated analysis-only gateway and restricted model process.",
+      "reason": "Old SQL/privileged broker unnecessary for inference; ordinary child inherited admin token.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "Historical privileged pipeline",
+        "Ordinary unrestricted child token"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "MANUAL-OWNERSHIP",
+      "date": "2026-09-26",
+      "topic": "Parallel recovery attribution",
+      "decision": "Treat observed manual Ollama/llama and Modelfile as owner-authorized.",
+      "reason": "Explicit later owner attribution; historical UNKNOWN receipt remains unchanged.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "UNKNOWN"
+      ],
+      "status": "COMPLETE",
+      "supersedes": "RECOVERY_MANUAL_ACTOR_UNKNOWN",
+      "superseded_by": null
+    },
+    {
+      "decision_id": "V2-SEPARATION",
+      "date": "2026-09-26",
+      "topic": "Observation and cognition",
+      "decision": "ARX observes; Qwen/Codex interpret; deterministic policy bounds proposals.",
+      "reason": "Typed products and controlled process experiment demonstrate scoped boundaries.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "UNKNOWN"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "V2-ROUTING",
+      "date": "2026-09-26",
+      "topic": "Model selection",
+      "decision": "Task/resource routing with 4B reflex and 30B analysis; no auto-launch.",
+      "reason": "Larger is not automatically preferable; explicit engineering launch retained.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "Selection by size alone"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "V2-LEARNING",
+      "date": "2026-09-26",
+      "topic": "Learning evidence",
+      "decision": "Require later observation; do not claim learning from changed prose.",
+      "reason": "Retrospective ARX comparison supports measured feedback; no sports outcome yet.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "UNKNOWN"
+      ],
+      "status": "COMPLETE",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "V2-ON-DEMAND",
+      "date": "2026-09-26",
+      "topic": "Runtime operation",
+      "decision": "On-demand cycles and bounded append storage.",
+      "reason": "No new daemon/task; staleness explicit and capacity stops writes.",
+      "evidence": "docs/CHILD_DECISIONS.md",
+      "alternatives_considered": [
+        "UNKNOWN"
+      ],
+      "status": "PARTIAL",
+      "supersedes": null,
+      "superseded_by": null
+    },
+    {
+      "decision_id": "CONTINUITY-DUAL",
+      "date": "2026-09-26",
+      "topic": "Continuity preservation",
+      "decision": "Public indexes and private immutable capsules cooperate without blind copying.",
+      "reason": "Owner requests low-consumption reconstruction of awareness before action.",
+      "evidence": "docs/continuity/README.md",
+      "alternatives_considered": [
+        "Repository-only memory lacks machine detail",
+        "Blind identical public/private copies expose inappropriate data"
+      ],
+      "status": "ACCEPTED",
+      "supersedes": null,
+      "superseded_by": null
+    }
+  ]
+}

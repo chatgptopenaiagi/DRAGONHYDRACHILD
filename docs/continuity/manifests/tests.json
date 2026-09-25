@@ -1,0 +1,72 @@
+{
+  "capture_id": null,
+  "ci_runs": [
+    {
+      "conclusion": "success",
+      "git_commit": "8cfde5e7ca903cf187f646b6d43a3af283965e86",
+      "run_id": 36196235236,
+      "status": "completed",
+      "url": "https://github.com/chatgptopenaiagi/DRAGONHYDRACHILD/actions/runs/36196235236",
+      "workflow": "CI"
+    },
+    {
+      "conclusion": "success",
+      "git_commit": "8cfde5e7ca903cf187f646b6d43a3af283965e86",
+      "run_id": 36196238005,
+      "status": "completed",
+      "url": "https://github.com/chatgptopenaiagi/DRAGONHYDRACHILD/actions/runs/36196238005",
+      "workflow": "Repository safety"
+    }
+  ],
+  "created_at": "2026-09-25T22:34:00Z",
+  "donor_tests_outside_child_scope": 37,
+  "errors": 0,
+  "evidence_refs": [
+    "docs/COGNITIVE_V2_PROGRESS.md",
+    "docs/evidence/cognitive_v2_validation.json",
+    "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/final-handoff.json",
+    "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/full-tests-release.log",
+    "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/portable-final.log",
+    "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/staged-check.json",
+    "runtime/checkpoints/cognitive-awareness-v2-20260925T214532Z/repository-safety-final.json"
+  ],
+  "failures": 0,
+  "known_transient_failures": [
+    {
+      "context": "Serial gateway occupied by inference",
+      "current_limit": "Concurrent health responsiveness remains limited",
+      "failure": "CONCURRENT_HEALTH_TIMEOUT",
+      "later_result": "IDLE_RETRY_PASSED"
+    }
+  ],
+  "last_validated_commit": "8cfde5e7ca903cf187f646b6d43a3af283965e86",
+  "last_validated_tree": "e6162e925da5eb97dc76546750677862b7655f0f",
+  "live_checks": {
+    "arx_interpretation": 4,
+    "arx_process": 8,
+    "gateway_cockpit_boundaries": 12,
+    "prior_recovery": 19
+  },
+  "local_integration_tests": 13,
+  "new_v2_tests": 271,
+  "passed": 694,
+  "portable_live_dependency_attempts": 0,
+  "portable_tests": 681,
+  "preservation_validation": {
+    "errors": 0,
+    "evidence_locator": "runtime/continuity/checkpoints/targeted-tests.log",
+    "failures": 0,
+    "full_suite_rerun_required": false,
+    "model_inference_required": false,
+    "passed": 36,
+    "skips": 0,
+    "status": "RECORDED_IN_LOCAL_PRESERVATION_HANDOFF",
+    "targeted_tests": 36
+  },
+  "project_id": "DRAGONHYDRACHILD",
+  "repository_safety": "PASS",
+  "schema_name": "dragonhydra.continuity.tests",
+  "schema_version": "1",
+  "skips": 0,
+  "total_tests": 694
+}

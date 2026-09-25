@@ -1,0 +1,37 @@
+{
+  "schema_name": "dragonhydra.continuity.capabilities",
+  "schema_version": "1",
+  "created_at": "2026-09-25T22:34:00Z",
+  "project_id": "DRAGONHYDRACHILD",
+  "capture_id": null,
+  "registry_ref": "docs/evidence/cognitive_v2_capabilities.json",
+  "policy_ref": "src/dragonhydra/cognitive_v2/policy.py",
+  "descriptor_count": 54,
+  "actor_ids": [
+    "QWEN_4B",
+    "QWEN_30B",
+    "CODEX"
+  ],
+  "mode": "ANALYSIS_AND_PROPOSALS_ONLY",
+  "machine_mutation_enabled": false,
+  "automatic_execution_enabled": false,
+  "requires_hydra_medusa_for_external_evidence": true,
+  "continuity_commands": [
+    "capture",
+    "status",
+    "verify",
+    "resume-info",
+    "compare"
+  ],
+  "continuity_authority": "BOUNDED_READ_ONLY_OBSERVATION_AND_LOCAL_CAPSULE_WRITE",
+  "forbidden_automatic_operations": [
+    "MODEL_LAUNCH",
+    "INFERENCE",
+    "PACKAGE_INSTALL",
+    "SERVICE_CHANGE",
+    "REGISTRY_CHANGE",
+    "PROCESS_CONTROL",
+    "GIT_RESET_OR_MERGE",
+    "SOURCE_ACQUISITION"
+  ]
+}
