@@ -16,3 +16,13 @@ All entries dated 2026-09-24. Donor decisions remain historical truth.
 | No release at closure | Important gates remain unproved. | Coherent tested commits; no production/version-completion claim. | COMPLETE |
 
 See the [final report](FINAL_DRAGONHYDRACHILD_REPORT.md) and [component removal/measurement register](CHILD_ARCHITECTURE_SCORECARD.md).
+
+## 2026-09-25 — LocalAI recovery
+
+| Decision | Reason and alternative | Evidence / trade-offs | Status |
+| --- | --- | --- | --- |
+| Recover preserved LocalAI before replacing it | Filesystem, source, audits and model hashes survived Windows reinstall. Blind service restart would revive unverified identities and action authority. | [Recovery audit](LOCALAI_RECOVERY_AUDIT.md); preserved runtime and both models work; no dependency installation. | COMPLETE |
+| Analysis-only CHILD gateway; explicit feature branch | Owner selected CHILD and forbade parent changes/merge. Old SQL/privileged broker is unnecessary for inference. | Strict schemas, authenticated loopback, provenance/hashes, fail-closed receipts; no source or action tools. | COMPLETE |
+| Restricted model process; trusted engineering supervisor | Ordinary child processes inherited an administrative token. | Medium integrity, admin deny-only, job no-children/kill-on-close; ordinary user filesystem/network access remains an OS limitation. | COMPLETE |
+| Preserve concurrent external recovery work | An unowned Ollama Modelfile/process appeared after inventory. | No overwrite/termination; originals unchanged, exact whole-tree equality false, actor attribution UNKNOWN. | PARTIAL |
+| Keep scientific gates and original forecast unchanged | Inference availability is not predictive validity or external evidence. | Same frozen input replayed through no-AI,4B,30B; no outcome/accuracy-gain claim. | COMPLETE |

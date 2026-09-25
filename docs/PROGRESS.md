@@ -1,5 +1,9 @@
 # DRAGONHYDRA progress
 
+## 2026-09-25 LocalAI recovery — current CHILD follow-up
+
+Owner-authorized recovery on `feature/localai-qwen-recovery`: preserved llama runtime and both Qwen models verified; bounded authenticated local analysis gateway, strict CHILD contracts, reduced-privilege model process and read-only cockpit implemented. 423 applicable tests pass (410 portable + 13 local), plus 19 live recovery checks. The original forecast and parent are unchanged. [Recovery audit](LOCALAI_RECOVERY_AUDIT.md) distinguishes original-asset preservation from a concurrent unowned Ollama addition and records remaining limits. No new packages, Windows services, source collection, machine-action capability or branch merge. Earlier closure and scientific limits remain historical truth.
+
 ## 2026-09-24 CHILD continuous experiment — current CHILD authority
 
 The protected parent was inherited read-only. CHILD attempted V0–V10 in independent private history with separate databases and presentation. Five tested implementation milestones culminate at `5d4d7bc55de9b7d2e8b6f568c929bd65e76abcc0`; 349 applicable tests pass (336 portable, 13 local). [Final report](FINAL_DRAGONHYDRACHILD_REPORT.md), [execution status](CHILD_EXECUTION_STATUS.md), [stage matrix](CHILD_V0_V10_COMPLETION_MATRIX.md) and [CHILD decisions](CHILD_DECISIONS.md) supersede inherited statements about CHILD's active work. Original donor history below is preserved.

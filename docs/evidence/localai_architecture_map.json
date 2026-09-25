@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "record_type": "LOCALAI_HISTORICAL_ARCHITECTURE_RECONSTRUCTION",
+  "reviewed_on": "2026-09-25",
+  "evidence_root": "C:\\LocalAI",
+  "historical_system_running_claimed": false,
+  "historical_components_executed_during_review": false,
+  "secret_material_read": false,
+  "classifications": ["OBSERVED", "STRONGLY_INFERRED", "WEAKLY_INFERRED", "UNKNOWN"],
+  "components": [
+    {"id":"machine","classification":"OBSERVED","role":"External Windows machine and service state measured by Observer","references":["Observer/LocalAI.ObserverService.cs:158-177,223-280"],"recovery_disposition":"UNCHANGED"},
+    {"id":"codex_or_engineering_caller","classification":"OBSERVED","role":"External explicit caller of the bounded local inference interface","references":["MCP/server.mjs:115-151","Tools/Invoke-LocalAIEngineeringPlanner.ps1:343-347"],"recovery_disposition":"ADAPT"},
+    {"id":"generated_status_artifact","classification":"OBSERVED","role":"Generated public/status.json imported by the historical dashboard","references":["Dashboard/app/page.tsx:1"],"recovery_disposition":"UNCHANGED"},
+    {"id":"python_agent","classification":"OBSERVED","role":"Earlier SQLite context, policy and receipt lineage","protocols":["SQLite","loopback HTTP chat"],"references":["agent/context_builder.py:128-154","agent/llm_bridge.py:21-99","config/settings.json:6"],"recovery_disposition":"UNCHANGED"},
+    {"id":"observer","classification":"OBSERVED","role":"Machine telemetry, SQL samples/heartbeat, fallback log, retention","historical_service":"LocalAI-Observer","historical_account":"NT SERVICE\\LocalAI-Observer","dependencies":["Windows service/process APIs","SQL Server LocalAI","nvidia-smi"],"references":["Observer/LocalAI.ObserverService.cs:85-106,158-177,223-280,290-478","audit/Phase3-20260830-085512/PHASE3-VERDICT.json:5-27"],"recovery_disposition":"DEFER"},
+    {"id":"sql_state","classification":"OBSERVED","role":"Durable telemetry, jobs, messages, missions, plans, authorization and audit state","protocols":["SQL Server"],"historical_port":1433,"historical_host":"127.0.0.1","historical_database":"LocalAI","references":["config/sqlserver.json:5-14","Broker/LocalAI.BrokerService.cs:100-171,498-552","Productization/Docs/Architecture/ARCHITECTURE.md:25"],"recovery_disposition":"NOT_REQUIRED"},
+    {"id":"broker","classification":"OBSERVED","role":"SQL job claim, routing, curated context, model HTTP call, response persistence","historical_service":"LocalAI-Broker","historical_account":"NT SERVICE\\LocalAI-Broker","dependencies":["SQL Server LocalAI","System.Data.SqlClient","System.Web.Script.Serialization","HTTP"],"references":["Broker/LocalAI.BrokerService.cs:3,10,100-171,176-415","audit/Phase5-20260830-091437/PHASE5-VERDICT.json:5-35"],"recovery_disposition":"ADAPT"},
+    {"id":"qwen_supervisor","classification":"OBSERVED","role":"Start, health-check, restart and log configured llama child","historical_service":"LocalAI-Qwen30B","historical_account":"LocalSystem","dependencies":["Windows ServiceBase","native llama-server","model file"],"references":["Orchestrator/LocalAI.QwenService.cs:12,26,58-117,137-181,222-245","Productization/Reboot/reboot-preflight.json:25-28"],"recovery_disposition":"NOT_REQUIRED"},
+    {"id":"qwen30b","classification":"OBSERVED","role":"Large local coding/reasoning inference","historical_host":"127.0.0.1","historical_port":8080,"historical_profile":{"context_size":8192,"threads":10,"batch_size":256,"gpu_layers":10,"parallel_slots":1},"references":["config/qwen30b-service.conf:5-19","logs/Qwen30B/service.log"],"recovery_disposition":"REUSE_AFTER_VALIDATION"},
+    {"id":"sentinel_supervisor","classification":"OBSERVED","role":"Supervise separate 4B llama child","historical_service":"LocalAI-Sentinel","historical_account":"NT SERVICE\\LocalAI-Sentinel","dependencies":["Windows ServiceBase","native llama-server","model file"],"references":["Sentinel/LocalAI.SentinelService.cs:12,102-154","audit/Phase4B-20260830-090128/PHASE4B-VERDICT.json:12-22"],"recovery_disposition":"NOT_REQUIRED"},
+    {"id":"qwen4b","classification":"OBSERVED","role":"CPU-first inexpensive local reasoning/review called Sentinel","historical_host":"127.0.0.1","historical_port":8081,"historical_profile":{"context_size":4096,"threads":4,"batch_size":128,"gpu_layers":0,"parallel_slots":1},"references":["config/sentinel-service.conf:2-16","config/resource-policy.json:4-12"],"recovery_disposition":"REUSE_AFTER_VALIDATION"},
+    {"id":"mcp","classification":"OBSERVED","role":"Six bounded tools via stdio and fixed PowerShell bridge","tools":["localai_status","machine_snapshot","machine_history","ask_local_ai","get_ai_job","recent_ai_jobs"],"dependencies":["Node","PowerShell 7","MCP SDK 2.0.0","Zod 4","SQL bridge"],"limits":{"prompt_characters":20000,"request_timeout_seconds_max":600,"bridge_timeout_seconds":660,"bridge_output_bytes":16777216},"references":["MCP/server.mjs:1-25,61-196","MCP/package.json:7-10","MCP/bridge/Invoke-LocalAIMcpBridge.ps1:5,165-179"],"recovery_disposition":"DEFER"},
+    {"id":"planner_governor","classification":"OBSERVED","role":"Qwen JSON plan, deterministic routing authority, Sentinel scope review, SQL persistence","limits":{"default_max_steps":4,"repository_text_characters":24000},"routes":["deterministic","sentinel","qwen30b","codex"],"references":["Tools/Invoke-LocalAIEngineeringPlanner.ps1:10,249-264,296-347,471-572,689-705","Tools/Resolve-LocalAIRoute.ps1:7-48"],"recovery_disposition":"ADAPT"},
+    {"id":"codex_workers","classification":"OBSERVED","role":"Explicit context packets, stdin prompts, sandbox modes and Git worktree tasks","sandbox_modes":["read-only","workspace-write"],"references":["Tools/Get-LocalAICodexContext.ps1:121-134","Tools/Invoke-LocalAICodex.ps1:85-96,129-174","ai machine.txt:324-348,399-416"],"recovery_disposition":"DEFER"},
+    {"id":"action_control","classification":"OBSERVED","role":"Separate policy, approval, single-use ticket, fixed executor, verification and recovery","references":["Productization/Docs/Architecture/ARCHITECTURE.md:9-25,45"],"recovery_disposition":"DEFER"},
+    {"id":"privileged_broker","classification":"OBSERVED","role":"Later narrow privileged executor, separate from inference Broker","historical_capability":"service.restart","historical_target":"LocalAI-Observer","historical_account":"NT SERVICE\\LocalAI-PrivilegedBroker","references":["Productization/Docs/Architecture/ARCHITECTURE.md:19,45","Productization/Reboot/reboot-preflight.json:40-44"],"recovery_disposition":"NOT_REQUIRED"},
+    {"id":"dashboard","classification":"OBSERVED","role":"Read-only presentation of generated status artifact","dependencies":["Node","React","vinext","public/status.json"],"references":["Dashboard/app/page.tsx:1-3","Dashboard/package.json"],"recovery_disposition":"UNCHANGED"}
+  ],
+  "edges": [
+    {"from":"machine","to":"observer","classification":"OBSERVED","kind":"measurement","reference":"Observer/LocalAI.ObserverService.cs:158-177,223-280"},
+    {"from":"observer","to":"sql_state","classification":"OBSERVED","kind":"samples_heartbeat_events","reference":"Observer/LocalAI.ObserverService.cs:290-422"},
+    {"from":"codex_or_engineering_caller","to":"mcp","classification":"OBSERVED","kind":"stdio_tool_request","reference":"MCP/server.mjs:1-25,115-151"},
+    {"from":"mcp","to":"sql_state","classification":"OBSERVED","kind":"fixed_bridge_parameterized_job","reference":"MCP/bridge/Invoke-LocalAIMcpBridge.ps1:165-179"},
+    {"from":"sql_state","to":"broker","classification":"OBSERVED","kind":"atomic_job_claim_and_selected_context","reference":"Broker/LocalAI.BrokerService.cs:100-138,200-330"},
+    {"from":"broker","to":"qwen30b","classification":"OBSERVED","kind":"bounded_chat","reference":"Broker/LocalAI.BrokerService.cs:146-169,353-380"},
+    {"from":"broker","to":"qwen4b","classification":"OBSERVED","kind":"bounded_chat","reference":"Broker/LocalAI.BrokerService.cs:146-169,353-380"},
+    {"from":"broker","to":"sql_state","classification":"OBSERVED","kind":"response_message_status_receipt","reference":"Broker/LocalAI.BrokerService.cs:170-171,422-512"},
+    {"from":"qwen_supervisor","to":"qwen30b","classification":"OBSERVED","kind":"child_process_supervision","reference":"Orchestrator/LocalAI.QwenService.cs:137-181,184-245"},
+    {"from":"sentinel_supervisor","to":"qwen4b","classification":"OBSERVED","kind":"child_process_supervision","reference":"Sentinel/LocalAI.SentinelService.cs:102-154"},
+    {"from":"planner_governor","to":"action_control","classification":"OBSERVED","kind":"proposal_not_authority","reference":"Productization/Docs/Architecture/ARCHITECTURE.md:9-25"},
+    {"from":"action_control","to":"privileged_broker","classification":"OBSERVED","kind":"separate_narrow_ticket","reference":"Productization/Docs/Architecture/ARCHITECTURE.md:19-25,45"},
+    {"from":"generated_status_artifact","to":"dashboard","classification":"OBSERVED","kind":"read_only_render","reference":"Dashboard/app/page.tsx:1"}
+  ],
+  "claims": [
+    {"id":"custom_identity","classification":"OBSERVED","statement":"This is the owner's custom LocalAI architecture, not the unrelated public LocalAI product.","references":["Broker/LocalAI.BrokerService.cs:206-207"]},
+    {"id":"tunnel_meaning","classification":"STRONGLY_INFERRED","statement":"AI tunneling operationally means curated context, role-specific bounded inference, fixed routing and separate action authority; no special network tunnel was established.","references":["MCP/server.mjs:115-151","Broker/LocalAI.BrokerService.cs:353-380","Tools/Invoke-LocalAIEngineeringPlanner.ps1:296-347,471-572","Productization/Docs/Architecture/ARCHITECTURE.md:5,25"]},
+    {"id":"partial_intelligence","classification":"UNKNOWN","statement":"No API disabling a chosen fraction of model intelligence or separate encrypted tunnel was established. MoE identity and GPU offload do not establish authority restrictions.","references":["start-qwen.ps1:84-94","config/qwen30b-service.conf:10-14"]},
+    {"id":"broker_limits","classification":"OBSERVED","statement":"Broker uses temperature 0.2, max_tokens 1024, no streaming; invalid envelopes can fall back to raw text and reads are not bounded to a small response schema.","references":["Broker/LocalAI.BrokerService.cs:351,366-368,387-415"]},
+    {"id":"context_overflow","classification":"OBSERVED","statement":"Historical logs record two 9554-token requests rejected against context size 8192.","references":["logs/Qwen30B/llama.log:358,363"]},
+    {"id":"later_sql_failure","classification":"OBSERVED","statement":"After reported reboot success, preserved Broker/Observer logs end on 2026-09-01 around 10:28 with SQL Server unavailable; historical final health cannot be claimed.","references":["Productization/PRODUCTIZATION-FINAL-REPORT.md:14-15","logs/Broker/broker-service.log","logs/Observer/observer-service.log"]},
+    {"id":"historical_outage_cause","classification":"UNKNOWN","statement":"The cause of the historical SQL failure and subsequent machine state were not established.","references":["logs/Broker/broker-service.log","logs/Observer/observer-service.log"]},
+    {"id":"minimal_subset","classification":"STRONGLY_INFERRED","statement":"Native llama plus model and a rebuilt bounded HTTP interface suffice for analysis; old SQL schemas, service identities, PostgreSQL, PrivilegedBroker and historical Python environment need not be restored.","references":["Orchestrator/LocalAI.QwenService.cs:137-181","agent/llm_bridge.py:65-99","Broker/LocalAI.BrokerService.cs:353-380"]},
+    {"id":"product_acceptance","classification":"OBSERVED","statement":"Product report records unsigned package and incomplete independent clean-machine SQL/service integration despite reboot persistence results.","references":["Productization/PRODUCTIZATION-FINAL-REPORT.md:25-29,42"]},
+    {"id":"core_binary_reproducibility","classification":"UNKNOWN","statement":"Matching historical source snapshots does not establish reproducible builds or compiler/runtime provenance of preserved core EXEs.","references":["Orchestrator/LocalAI.QwenService.cs","Broker/LocalAI.BrokerService.cs","Observer/LocalAI.ObserverService.cs","Sentinel/LocalAI.SentinelService.cs"]}
+  ],
+  "source_comparisons": [
+    {"path":"Orchestrator/LocalAI.QwenService.cs","sha256":"1315441183c726bbca94bbc42bae2f68d8d029e49c60f2fb5080e553572f1982","phase8_equal":true,"staged_runtime_equal":true,"classification":"OBSERVED"},
+    {"path":"Broker/LocalAI.BrokerService.cs","sha256":"a86f59dcf7705ae674e5cf422c707429ef7f3b7caca7d38f9c0e8166708f52cf","phase8_equal":true,"staged_runtime_equal":true,"classification":"OBSERVED"},
+    {"path":"Observer/LocalAI.ObserverService.cs","sha256":"3d57c70c7997a8694e36102c22e412f3fd54f38b54651c983054bd5a88a969ab","phase8_equal":true,"staged_runtime_equal":true,"classification":"OBSERVED"},
+    {"path":"Sentinel/LocalAI.SentinelService.cs","sha256":"21b476bc0b86798127a9d9e0dcd54bcbb9b245a66753ba7c5a68b49713ca0747","phase8_equal":true,"staged_runtime_equal":true,"classification":"OBSERVED"},
+    {"path":"MCP/server.mjs","sha256":"645808a222b668cc9d02fcf20a4174f68694535d1dfc82b37edded32bc00f688","phase8_equal":true,"staged_runtime_equal":null,"classification":"OBSERVED"},
+    {"path":"MCP/bridge/Invoke-LocalAIMcpBridge.ps1","sha256":"87f7a60f04fa7dd042bf9b48bce5b63fb5bae679820265bbbb652d1be497e32a","phase8_equal":true,"staged_runtime_equal":null,"classification":"OBSERVED"}
+  ],
+  "comparison_roots": {
+    "phase8":"GoldenBaselines/Phase8-Golden-20260830-115838/live-snapshot",
+    "staged_runtime":"Productization/Package/Stage-20260831-145720/Runtime"
+  },
+  "limits": [
+    "Historical source and receipts are evidence about the old design, not current execution authorization.",
+    "No DPAPI decryption, service registration, registry mutation or action replay was performed in archaeology.",
+    "No historical runtime output or private database content is included in this tracked map.",
+    "Current model/runtime health is established by separate recovery validation receipts."
+  ]
+}

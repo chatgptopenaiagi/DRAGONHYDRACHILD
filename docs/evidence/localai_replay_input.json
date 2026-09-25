@@ -1,0 +1,100 @@
+{
+  "as_of_at": "2026-09-25T20:45:44.209013+00:00",
+  "evidence": [
+    {
+      "available_at": "2026-09-25T20:45:43.512473+00:00",
+      "content_hash": "bb91f0ab3e8359df163bb9ec98549bfed85e200dd4c32f3bd606b5890d932dd2",
+      "epistemic_state": "OBSERVATION",
+      "evidence_id": "45f8ff0ed89e41fa92217ab237805d6e",
+      "provenance_ids": [
+        "45f8ff0ed89e41fa92217ab237805d6e"
+      ],
+      "source_id": "openfootball"
+    }
+  ],
+  "fixture_id": "01bbc5f8-6b8d-5ece-b0ec-9b2a349a8b4c",
+  "forecasts": [
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "DIXON_COLES",
+      "probabilities": [
+        0.6047069719708186,
+        0.17777262908874483,
+        0.2175203989404366
+      ]
+    },
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "ELO",
+      "probabilities": [
+        0.46958983698761403,
+        0.25,
+        0.28041016301238597
+      ]
+    },
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "KNN",
+      "probabilities": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "LEAGUE_EMPIRICAL",
+      "probabilities": [
+        0.3958333333333333,
+        0.25,
+        0.3541666666666667
+      ]
+    },
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "POISSON",
+      "probabilities": [
+        0.5921092058962409,
+        0.2029681612379001,
+        0.20492263286585896
+      ]
+    },
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "POISSON_GLM",
+      "probabilities": [
+        0.6316358665277646,
+        0.1935416791354591,
+        0.17482245433677632
+      ]
+    },
+    {
+      "epistemic_state": "PREDICTION",
+      "model_id": "VENUE_EMPIRICAL",
+      "probabilities": [
+        0.4610615079365079,
+        0.19345238095238096,
+        0.34548611111111116
+      ]
+    }
+  ],
+  "missing_evidence": [
+    "INJURY",
+    "KICKOFF_TIME",
+    "LINEUP",
+    "ODDS",
+    "OUTCOME"
+  ],
+  "schema_version": "1",
+  "temporal_mode": "STRICT_PIT",
+  "uncertainty": [
+    {
+      "dimension": "GENERAL",
+      "score": 0.9456699071991402
+    },
+    {
+      "dimension": "MODEL_DISAGREEMENT",
+      "score": 0.023148375619429003
+    }
+  ]
+}

@@ -39,6 +39,8 @@ TEXT_SUFFIXES = {".py", ".php", ".ps1", ".json", ".toml", ".ini", ".env", ".log"
 # Allow only these exact reviewed source lines, never arbitrary test directories.
 # The line digest is of public test code, not of a credential value.
 REVIEWED_SYNTHETIC_LINES = {
+    ("tests/test_localai_contracts.py", "credential_url", "8c643172d69c4ae30f0fa54106b10a3b05370516eff90f6edefa519a519c9b99"),
+    ("tests/test_localai_gateway.py", "literal_credential_assignment", "15214a8fd5a6668fc5f79823fcc750c883e45cebf46e9de3e794ffd2aff681f3"),
     ("tests/test_handoff_bridge.py", "credential_url", "150c74489f79da7afa6b26bc5e00879d2541fb39cf3a9e668b317aed4d67bcd5"),
     ("tests/test_handoff_bridge.py", "credential_connection_string", "5232318d7ced23bb7273e8303c21c00eb332b62e790445636ebe913bc1bf6428"),
     ("tests/test_web_pipeline.py", "credential_url", "740cce2ab01af5d8453acfe173566fa3c8d95678e04807ed497d49f2e2cd2ecc"),

@@ -15,6 +15,12 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PORTABLE_CLASSES = {
+    "test_localai_contracts.LocalAIContractTests",
+    "test_localai_contracts.LocalAIClientTests",
+    "test_localai_gateway.LocalAIGatewayTests",
+    "test_localai_gateway.LocalAISnapshotTests",
+    "test_localai_gateway.LocalAIHTTPBoundaryTests",
+    "test_localai_windows.LocalAIWindowsProcessTests",
     "test_child_identity.ChildIdentityTests",
     "test_child_observatory.ChildObservatoryTests",
     "test_child_intelligence.ChildOddsTests",

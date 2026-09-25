@@ -24,6 +24,8 @@ if (($_GET['format'] ?? '') === 'json') {
     echo json_encode($data, JSON_THROW_ON_ERROR | JSON_INVALID_UTF8_SUBSTITUTE); exit;
 }
 function h(mixed $value): string { return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
+require_once __DIR__ . '/localai-status.php';
+$localai = localai_status();
 $analysis = $data['analysis'] ?? [];
 $fixture = $analysis['selected_fixture'] ?? [];
 ?>
@@ -34,6 +36,7 @@ $fixture = $analysis['selected_fixture'] ?? [];
 <section class="stats"><article><strong><?=h($data['counts']['fixtures']['identities'] ?? 0)?></strong><span>SQL fixture identities</span></article><article><strong><?=h($data['counts']['snapshots']['versions'] ?? 0)?></strong><span>Immutable source snapshots</span></article><article><strong><?=h($analysis['historical_evaluation']['evaluation_matches'] ?? '—')?></strong><span>Historical evaluation matches</span></article><article><strong><?=h($analysis['prospective_prediction']['status'] ?? 'PENDING')?></strong><span>Prospective prediction ledger</span></article></section>
 <nav><a href="#evidence">Evidence</a><a href="#features">Features</a><a href="#models">Models</a><a href="#simulation">Simulation</a><a href="#market">Market</a><a href="#uncertainty">Uncertainty</a><a href="#research">Research</a><a href="#heads">HYDRA</a><a href="#history">Evaluation</a></nav>
 <div class="grid">
+<section id="localai" class="wide"><h2>Local Qwen · analysis only</h2><p class="muted">Last reported state; a heartbeat older than three minutes is marked STALE. AI interpretations are not evidence. No machine controls are exposed.</p><dl><?php foreach ($localai as $name => $value): ?><dt><?=h(str_replace('_', ' ', $name))?></dt><dd><?=h($value)?></dd><?php endforeach; ?></dl></section>
 <section id="evidence"><h2>Evidence & time</h2><p><span class="tag">STRICT_PIT capture</span> is distinct from <span class="tag warm">RECONSTRUCTED_PIT history</span>.</p><div id="evidence-view"></div><h3>Canonical identity review</h3><div id="identity-view"></div><h3>Sources and permissions</h3><div id="source-view"></div><h3>External weather hypothesis</h3><div id="weather-view"></div><p class="muted">Weather forecast data, when available: <a href="https://api.met.no/weatherapi/locationforecast/2.0/documentation">MET Norway</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Display reformatted; London coordinate proxy, not measured stadium weather.</p></section>
 <section id="features"><h2>Feature factory</h2><p class="muted">Every snapshot retains input IDs, calculation/code version, availability, units and missingness.</p><div id="feature-view"></div></section>
 <section id="models" class="wide"><h2>Math engines & Prediction Tribunal</h2><p class="muted">Simple baselines remain visible. Past-loss weights use only scored history available at the decision cursor.</p><div id="model-view"></div><div id="tribunal-view"></div></section>

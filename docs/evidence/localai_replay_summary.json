@@ -1,0 +1,331 @@
+{
+  "schema_version": "1",
+  "status": "COMPLETE_BOUNDED_INTEGRATION",
+  "scientific_maturity": "PARTIAL_EXPERIMENTAL",
+  "baseline": {
+    "actor": "DETERMINISTIC_NO_AI_BASELINE",
+    "status": "ABSTAIN",
+    "conclusions": [],
+    "state_hash": "f67e504bc355fabb721dec872c6d14b54c9f99a08891ee673249a272325196e2",
+    "input_hash": "ed01b79db6849f71c3e98e6f3343edddde4e2ad0feaac2f624f9361c8d2f51a0",
+    "missing_evidence": [
+      "INJURY",
+      "KICKOFF_TIME",
+      "LINEUP",
+      "ODDS",
+      "OUTCOME"
+    ],
+    "accuracy_gain": "UNMEASURED"
+  },
+  "models": [
+    {
+      "identity": {
+        "model_id": "qwen3-4b",
+        "model_hash": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+        "runtime_id": "llama-b10665-ca3d5a3e1",
+        "context_size": 4096,
+        "execution_mode": "GPU"
+      },
+      "startup_seconds": 2.343,
+      "response": {
+        "conclusions": [
+          {
+            "dimension": "GENERAL",
+            "epistemic_state": "HYPOTHESIS",
+            "priority": "HIGH",
+            "reason_code": "HIGH_UNCERTAINTY"
+          },
+          {
+            "dimension": "MODEL_DISAGREEMENT",
+            "epistemic_state": "HYPOTHESIS",
+            "priority": "LOW",
+            "reason_code": "MODEL_DISAGREEMENT"
+          }
+        ],
+        "created_at": "2026-09-25T21:18:57.692824Z",
+        "failure_state": null,
+        "input_hash": "ed01b79db6849f71c3e98e6f3343edddde4e2ad0feaac2f624f9361c8d2f51a0",
+        "latency_ms": 9413.056,
+        "model_hash": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+        "model_id": "qwen3-4b",
+        "output_hash": "fd5f4cb1660b30f462626d699da21e9676dbf66ae51b6beb824800ffad2d70d1",
+        "reason_codes": [
+          "MODEL_ANALYSIS"
+        ],
+        "request_id": "0c82d28b-68d0-4e26-8e87-ba7baacd14ad",
+        "result_status": "SUCCESS",
+        "runtime_id": "llama-b10665-ca3d5a3e1",
+        "schema_version": "1",
+        "task_kind": "ANALYZE_UNCERTAINTY"
+      },
+      "parameters": {
+        "context_size": 4096,
+        "max_tokens": 256,
+        "seed": 42,
+        "temperature": 0
+      },
+      "inference": {
+        "timings": {
+          "predicted_ms": 6744.692,
+          "predicted_n": 68,
+          "predicted_per_second": 9.933737522780877,
+          "prompt_ms": 2638.894,
+          "prompt_n": 1031,
+          "prompt_per_second": 390.6939801295543
+        },
+        "usage": {
+          "completion_tokens": 68,
+          "prompt_tokens": 1031,
+          "total_tokens": 1099
+        }
+      },
+      "peak_process_ram_bytes": 3607547904,
+      "peak_device_vram_mib": 5767,
+      "peak_device_gpu_utilization_percent": 99,
+      "sampled_cpu_seconds_delta": 15.78125,
+      "security": {
+        "integrity_sid": "S-1-16-8192",
+        "administrator_groups": {
+          "S-1-5-114": {
+            "enabled": false,
+            "deny_only": true
+          },
+          "S-1-5-32-544": {
+            "enabled": false,
+            "deny_only": true
+          }
+        },
+        "privilege_count": 1,
+        "filesystem_read_isolated": false,
+        "network_os_sandboxed": false
+      }
+    },
+    {
+      "identity": {
+        "model_id": "qwen3-coder-30b",
+        "model_hash": "fadc3e5f8d42bf7e894a785b05082e47daee4df26680389817e2093056f088ad",
+        "runtime_id": "llama-b10665-ca3d5a3e1",
+        "context_size": 4096,
+        "execution_mode": "HYBRID_CPU_GPU"
+      },
+      "startup_seconds": 2.572,
+      "response": {
+        "conclusions": [
+          {
+            "dimension": "GENERAL",
+            "epistemic_state": "HYPOTHESIS",
+            "priority": "HIGH",
+            "reason_code": "HIGH_UNCERTAINTY"
+          },
+          {
+            "dimension": "MODEL_DISAGREEMENT",
+            "epistemic_state": "ANOMALY_REPORT",
+            "priority": "LOW",
+            "reason_code": "MODEL_DISAGREEMENT"
+          }
+        ],
+        "created_at": "2026-09-25T21:19:58.414493Z",
+        "failure_state": null,
+        "input_hash": "ed01b79db6849f71c3e98e6f3343edddde4e2ad0feaac2f624f9361c8d2f51a0",
+        "latency_ms": 45783.796,
+        "model_hash": "fadc3e5f8d42bf7e894a785b05082e47daee4df26680389817e2093056f088ad",
+        "model_id": "qwen3-coder-30b",
+        "output_hash": "8f18c489fcf37f5600adccb2cf0098c40453223241791abcfc72283d064b889f",
+        "reason_codes": [
+          "MODEL_ANALYSIS"
+        ],
+        "request_id": "7575cbba-337e-466e-b5ae-f064ef8b6a66",
+        "result_status": "SUCCESS",
+        "runtime_id": "llama-b10665-ca3d5a3e1",
+        "schema_version": "1",
+        "task_kind": "ANALYZE_UNCERTAINTY"
+      },
+      "parameters": {
+        "context_size": 4096,
+        "max_tokens": 256,
+        "seed": 42,
+        "temperature": 0
+      },
+      "inference": {
+        "timings": {
+          "predicted_ms": 20572.425,
+          "predicted_n": 104,
+          "predicted_per_second": 5.006701932319598,
+          "prompt_ms": 25206.36,
+          "prompt_n": 1027,
+          "prompt_per_second": 40.74368532386271
+        },
+        "usage": {
+          "completion_tokens": 104,
+          "prompt_tokens": 1027,
+          "total_tokens": 1131
+        }
+      },
+      "peak_process_ram_bytes": 18054864896,
+      "peak_device_vram_mib": 4321,
+      "peak_device_gpu_utilization_percent": 99,
+      "sampled_cpu_seconds_delta": 142.015625,
+      "security": {
+        "integrity_sid": "S-1-16-8192",
+        "administrator_groups": {
+          "S-1-5-114": {
+            "enabled": false,
+            "deny_only": true
+          },
+          "S-1-5-32-544": {
+            "enabled": false,
+            "deny_only": true
+          }
+        },
+        "privilege_count": 1,
+        "filesystem_read_isolated": false,
+        "network_os_sandboxed": false
+      }
+    }
+  ],
+  "cpu_only": {
+    "identity": {
+      "model_id": "qwen3-4b",
+      "model_hash": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "runtime_id": "llama-b10665-ca3d5a3e1",
+      "context_size": 4096,
+      "execution_mode": "CPU"
+    },
+    "security": {
+      "integrity_sid": "S-1-16-8192",
+      "administrator_groups": {
+        "S-1-5-114": {
+          "enabled": false,
+          "deny_only": true
+        },
+        "S-1-5-32-544": {
+          "enabled": false,
+          "deny_only": true
+        }
+      },
+      "privilege_count": 1,
+      "filesystem_read_isolated": false,
+      "network_os_sandboxed": false
+    },
+    "metrics": {
+      "working_set_bytes": 5133283328,
+      "peak_working_set_bytes": 5133287424,
+      "cpu_seconds": 7.828125
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 28,
+      "prompt_ms": 422.261,
+      "prompt_per_token_ms": 15.08075,
+      "prompt_per_second": 66.30969945128723,
+      "predicted_n": 3,
+      "predicted_ms": 151.026,
+      "predicted_per_token_ms": 75.513,
+      "predicted_per_second": 13.242752903473573
+    },
+    "output": "12"
+  },
+  "live_checks": [
+    {
+      "name": "qwen3-4b health",
+      "passed": true
+    },
+    {
+      "name": "qwen3-4b identity",
+      "passed": true
+    },
+    {
+      "name": "qwen3-4b validated analysis",
+      "passed": true
+    },
+    {
+      "name": "qwen3-4b identical input",
+      "passed": true
+    },
+    {
+      "name": "unauthenticated rejected",
+      "passed": true
+    },
+    {
+      "name": "browser origin rejected",
+      "passed": true
+    },
+    {
+      "name": "shell route absent",
+      "passed": true
+    },
+    {
+      "name": "oversized body rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid schema rejected",
+      "passed": true
+    },
+    {
+      "name": "model hash mismatch",
+      "passed": true
+    },
+    {
+      "name": "no action capabilities",
+      "passed": true
+    },
+    {
+      "name": "backend crash fails closed",
+      "passed": true
+    },
+    {
+      "name": "qwen3-4b process exited",
+      "passed": true
+    },
+    {
+      "name": "qwen3-coder-30b health",
+      "passed": true
+    },
+    {
+      "name": "qwen3-coder-30b identity",
+      "passed": true
+    },
+    {
+      "name": "qwen3-coder-30b validated analysis",
+      "passed": true
+    },
+    {
+      "name": "qwen3-coder-30b identical input",
+      "passed": true
+    },
+    {
+      "name": "qwen3-coder-30b process exited",
+      "passed": true
+    },
+    {
+      "name": "CPU-only inference",
+      "passed": true
+    }
+  ],
+  "tests": {
+    "portable": 410,
+    "local_integration": 13,
+    "new_portable": 74,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "preservation": {
+    "original_file_metadata_changes": 0,
+    "removed_files": 0,
+    "critical_hash_changes": 0,
+    "parent_unchanged": true,
+    "frozen_forecast_unchanged": true,
+    "exact_tree_equality": false,
+    "concurrent_addition": "recovery/ollama-qwen4b/Modelfile",
+    "concurrent_addition_actor": "UNKNOWN"
+  },
+  "limitations": [
+    "No measured prediction accuracy or research benefit.",
+    "4B publisher provenance unverified; metadata Instruct-awq differs from historical repository label.",
+    "Device-wide GPU telemetry can include concurrently running external processes.",
+    "Reduced privilege is not complete OS filesystem/network isolation.",
+    "No auto-start, external acquisition or machine-action capability."
+  ]
+}
